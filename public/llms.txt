@@ -1,0 +1,31 @@
+# AlphaLux Cleaning
+> Eco-conscious, non-toxic house cleaning company serving 17 cities across Texas and California. Mobile service — we come to you.
+
+## Contact
+- Phone: (972) 559-0223
+- Email: info@alphaluxclean.com
+- Hours: Mon-Sat 8:00 AM – 6:00 PM, Sun by appointment
+- Website: https://www.alphaluxclean.com
+- GBP: https://share.google/UG6ei8NirJNiDuHDi
+
+## Services (base: https://www.alphaluxclean.com/services/)
+- Standard Cleaning — From $129 — /standard-cleaning
+- Deep Cleaning — From $249 — /deep-cleaning
+- Move Out Cleaning — From $299 — /move-out-cleaning
+- Recurring Cleaning — From $99/visit — /recurring-cleaning
+- Airbnb Cleaning — From $139 — /airbnb-cleaning
+- One-Time Cleaning — From $179 — /one-time-cleaning
+- Vacation Rental Cleaning — From $149 — /vacation-rental-cleaning
+- Post Construction Cleaning — From $399 — /post-construction-cleaning
+
+## Service Areas — Texas (base: https://www.alphaluxclean.com/locations/tx/)
+Dallas · Fort Worth · Austin · Houston · San Antonio
+
+## Service Areas — California (base: https://www.alphaluxclean.com/locations/ca/)
+Beverly Hills · Brentwood · Glendale · Pasadena · Los Angeles · Santa Monica · Hollywood · Long Beach · Huntington Beach · Anaheim · Irvine · Sacramento
+
+## Company
+- About: /about
+- Reviews: /reviews
+- Recent Projects: /recent-projects
+- Contact: /contact
