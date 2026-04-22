@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/lib/blogData";
 
 const BASE = "https://www.alphaluxclean.com";
 const NOW = new Date("2026-04-22");
@@ -52,16 +53,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const blogUrls = BLOG_POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: new Date(p.publishDate),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     { url: BASE, lastModified: NOW, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/about`, lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/reviews`, lastModified: NOW, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/contact`, lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/recent-projects`, lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/services`, lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/locations`, lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/blog`, lastModified: NOW, changeFrequency: "weekly", priority: 0.8 },
     ...serviceUrls,
     ...txUrls,
     ...caUrls,
+    ...blogUrls,
   ];
 }

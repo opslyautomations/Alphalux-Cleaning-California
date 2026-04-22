@@ -121,8 +121,8 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
-                { label: "Recent Projects", href: "/recent-projects" },
-                { label: "Reviews", href: "/reviews" },
+                { label: "Reviews & Projects", href: "/reviews" },
+                { label: "Blog", href: "/blog" },
                 { label: "Contact", href: "/contact" },
                 { label: "All Services", href: "/services" },
                 { label: "All Locations", href: "/locations" },

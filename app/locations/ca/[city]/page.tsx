@@ -133,8 +133,7 @@ export default async function CACityPage({ params }: { params: Promise<{ city: s
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SERVICES.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-5 card-hover hover:border-[#C9A961]/30">
-                <h3 className="text-[#0A0A0A] font-bold text-sm mb-1 group-hover:text-[#C9A961] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
-                <p className="text-[#C9A961] text-xs font-semibold mb-3">{s.price}</p>
+                <h3 className="text-[#0A0A0A] font-bold text-sm mb-3 group-hover:text-[#C9A961] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
                 <span className="text-[#C9A961] text-xs font-medium inline-flex items-center gap-1">
                   Learn More <ArrowRight className="w-3 h-3" />
                 </span>

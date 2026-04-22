@@ -8,7 +8,6 @@ import { PHONE_DISPLAY, PHONE_TEL, BASE_URL, SERVICES } from "@/lib/constants";
 
 const SERVICE_DATA: Record<string, {
   name: string;
-  price: string;
   intro: string;
   includes: string[];
   benefits: { title: string; desc: string }[];
@@ -16,7 +15,6 @@ const SERVICE_DATA: Record<string, {
 }> = {
   "standard-cleaning": {
     name: "Standard Cleaning",
-    price: "From $129",
     intro: "Keep your home consistently fresh and stress-free. Perfect for busy families and professionals across Dallas, Austin, Los Angeles, and every city we serve. Our eco-friendly standard cleaning maintains your home in spotless condition on whatever schedule works for you.",
     includes: [
       "Dusting all surfaces and fixtures",
@@ -44,7 +42,6 @@ const SERVICE_DATA: Record<string, {
   },
   "deep-cleaning": {
     name: "Deep Cleaning",
-    price: "From $249",
     intro: "Top-to-bottom detail cleaning that hits every overlooked corner — baseboards, behind appliances, inside cabinets, grout, vents. Ideal for first-time cleans, seasonal resets, or homes that haven't had a thorough clean in a while.",
     includes: [
       "Everything in standard cleaning",
@@ -73,7 +70,6 @@ const SERVICE_DATA: Record<string, {
   },
   "move-out-cleaning": {
     name: "Move Out Cleaning",
-    price: "From $299",
     intro: "Landlord-approved move-out cleans built to protect your security deposit. We know what property managers inspect for and deliver results that pass every walkthrough — in Dallas, Austin, Los Angeles, Santa Monica, and throughout Texas and California.",
     includes: [
       "Full deep clean of entire empty unit",
@@ -102,7 +98,6 @@ const SERVICE_DATA: Record<string, {
   },
   "recurring-cleaning": {
     name: "Recurring Cleaning",
-    price: "From $99/visit",
     intro: "Weekly, bi-weekly, or monthly plans with locked-in discounted pricing. The easiest way to keep your home consistently spotless without thinking about it — across Dallas, Houston, Beverly Hills, Los Angeles, and every city we serve.",
     includes: [
       "All standard cleaning tasks every visit",
@@ -127,7 +122,6 @@ const SERVICE_DATA: Record<string, {
   },
   "airbnb-cleaning": {
     name: "Airbnb Cleaning",
-    price: "From $139",
     intro: "Fast, reliable, 5-star turnovers for short-term rental hosts across Austin, Dallas, Los Angeles, Santa Monica, Hollywood, and throughout Texas and California. We understand tight check-out/check-in windows and deliver guest-ready results every time.",
     includes: [
       "Full standard clean of entire property",
@@ -154,7 +148,6 @@ const SERVICE_DATA: Record<string, {
   },
   "one-time-cleaning": {
     name: "One-Time Cleaning",
-    price: "From $179",
     intro: "One clean, no commitment, all the shine. Perfect for pre-event prep, post-guest cleanup, or treating yourself to a spotless home without a recurring plan. Available throughout Texas and California with same-week scheduling.",
     includes: [
       "Full standard or deep cleaning (your choice at booking)",
@@ -177,7 +170,6 @@ const SERVICE_DATA: Record<string, {
   },
   "vacation-rental-cleaning": {
     name: "Vacation Rental Cleaning",
-    price: "From $149",
     intro: "Reliable, detail-oriented cleans between guest stays for vacation rental owners and property managers. We keep your rental review-ready through every booking season across Huntington Beach, Santa Monica, Beverly Hills, and throughout California and Texas.",
     includes: [
       "Full turnover cleaning of entire property",
@@ -203,7 +195,6 @@ const SERVICE_DATA: Record<string, {
   },
   "post-construction-cleaning": {
     name: "Post Construction Cleaning",
-    price: "From $399",
     intro: "Dust, debris, and detail work after renovation or new construction across Houston, Dallas, Los Angeles, and throughout Texas and California. We use HEPA-grade equipment and non-toxic products to reveal the finished space underneath the construction haze.",
     includes: [
       "Construction dust removal from all surfaces",
@@ -253,18 +244,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!data) return {};
   return {
     title: `${data.name} | AlphaLux Cleaning — Texas & California`,
-    description: `${data.name} ${data.price} across Texas & California. Eco-friendly, non-toxic cleaning — licensed & insured. Get a free quote from AlphaLux Cleaning.`,
+    description: `${data.name} across Texas & California. Eco-friendly, non-toxic cleaning — licensed & insured. Free quote from AlphaLux Cleaning.`,
     alternates: { canonical: `${BASE_URL}/services/${slug}` },
     openGraph: {
       type: "website",
       title: `${data.name} | AlphaLux Cleaning — Texas & California`,
-      description: `${data.name} ${data.price}. Eco-friendly, non-toxic. Serving 17 cities in TX & CA.`,
+      description: `${data.name} — eco-friendly, non-toxic. Serving 17 cities in TX & CA.`,
       url: `${BASE_URL}/services/${slug}`,
       siteName: "AlphaLux Cleaning",
       locale: "en_US",
       images: [{ url: `${BASE_URL}/og/services-${slug}.png`, secureUrl: `${BASE_URL}/og/services-${slug}.png`, width: 1200, height: 630, alt: `${data.name} — AlphaLux Cleaning`, type: "image/png" }],
     },
-    twitter: { card: "summary_large_image", title: `${data.name} | AlphaLux Cleaning`, description: `${data.name} from ${data.price}. Eco-friendly in TX & CA.`, images: [`${BASE_URL}/og/services-${slug}.png`] },
+    twitter: { card: "summary_large_image", title: `${data.name} | AlphaLux Cleaning`, description: `${data.name} — eco-friendly, non-toxic cleaning in TX & CA.`, images: [`${BASE_URL}/og/services-${slug}.png`] },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
     other: { "theme-color": "#C9A961" },
   };
@@ -285,7 +276,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     description: data.intro,
     provider: { "@type": "HouseCleaningService", name: "AlphaLux Cleaning", url: BASE_URL },
     areaServed: ["Dallas", "Fort Worth", "Austin", "Houston", "San Antonio", "Beverly Hills", "Los Angeles", "Santa Monica"].map(n => ({ "@type": "City", name: n })),
-    offers: { "@type": "Offer", description: data.price, priceCurrency: "USD" },
+    offers: { "@type": "Offer", description: "Free quote available", priceCurrency: "USD" },
   };
 
   const faqSchema = {
@@ -330,10 +321,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
             <div>
               <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-2">AlphaLux Cleaning</p>
-              <h1 className="text-white font-bold leading-tight mb-2" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
+              <h1 className="text-white font-bold leading-tight" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
                 {data.name} in Texas &amp; California
               </h1>
-              <p className="text-[#C9A961] font-semibold text-lg">{data.price}</p>
             </div>
           </div>
         </div>
@@ -383,27 +373,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* Pricing callout */}
-      <section className="bg-[#0A0A0A] py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border border-[#C9A961]/30 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-widest mb-2">Pricing</p>
-              <h2 className="text-white font-bold text-3xl mb-1" style={{ fontFamily: "var(--font-playfair)" }}>{data.price}</h2>
-              <p className="text-gray-400 text-sm">Final pricing depends on home size and condition. Get an exact quote below.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#D4B876] transition-colors text-sm">
-                Get a Free Quote <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 border border-[#C9A961] text-[#C9A961] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#C9A961]/10 transition-colors text-sm">
-                <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How It Works */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,8 +418,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {relatedServices.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-5 card-hover hover:border-[#C9A961]/30">
-                <h3 className="text-[#0A0A0A] font-bold mb-1 text-sm group-hover:text-[#C9A961] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
-                <p className="text-[#C9A961] text-xs mb-3">{s.price}</p>
+                <h3 className="text-[#0A0A0A] font-bold mb-3 text-sm group-hover:text-[#C9A961] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
                 <span className="text-[#C9A961] text-sm font-medium inline-flex items-center gap-1">View Service <ArrowRight className="w-3.5 h-3.5" /></span>
               </Link>
             ))}

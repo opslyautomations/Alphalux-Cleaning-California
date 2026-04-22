@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 };
 
 const SERVICES = [
-  { name: "Standard Cleaning", slug: "standard-cleaning", price: "From $129", desc: "Regular upkeep for busy households. Includes dusting, vacuuming, mopping, kitchens, bathrooms, and more with eco-friendly products.", icon: Home },
-  { name: "Deep Cleaning", slug: "deep-cleaning", price: "From $249", desc: "Top-to-bottom detail cleaning — baseboards, inside appliances, grout, vents. Perfect for seasonal resets and first-time cleans.", icon: Layers },
-  { name: "Move Out Cleaning", slug: "move-out-cleaning", price: "From $299", desc: "Landlord-approved cleans built to protect your deposit. We know exactly what property managers inspect for.", icon: LogOut },
-  { name: "Recurring Cleaning", slug: "recurring-cleaning", price: "From $99/visit", desc: "Weekly, bi-weekly, or monthly plans with locked-in pricing. The most affordable way to stay consistently clean.", icon: RefreshCw },
-  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", price: "From $139", desc: "Fast 5-star turnovers for short-term rental hosts. Linens, restock checks, damage reports, and tight windows handled.", icon: Key },
+  { name: "Standard Cleaning", slug: "standard-cleaning", desc: "Regular upkeep for busy households. Includes dusting, vacuuming, mopping, kitchens, bathrooms, and more with eco-friendly products.", icon: Home },
+  { name: "Deep Cleaning", slug: "deep-cleaning", desc: "Top-to-bottom detail cleaning — baseboards, inside appliances, grout, vents. Perfect for seasonal resets and first-time cleans.", icon: Layers },
+  { name: "Move Out Cleaning", slug: "move-out-cleaning", desc: "Landlord-approved cleans built to protect your deposit. We know exactly what property managers inspect for.", icon: LogOut },
+  { name: "Recurring Cleaning", slug: "recurring-cleaning", desc: "Weekly, bi-weekly, or monthly plans with locked-in pricing. The most affordable way to stay consistently clean.", icon: RefreshCw },
+  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", desc: "Fast 5-star turnovers for short-term rental hosts. Linens, restock checks, damage reports, and tight windows handled.", icon: Key },
   { name: "One-Time Cleaning", slug: "one-time-cleaning", price: "From $179", desc: "No contracts, no commitment. Perfect for special occasions, pre-event prep, or a one-off refresh.", icon: Sparkles },
   { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning", price: "From $149", desc: "Reliable between-guest cleans for vacation rental owners and property managers across TX and CA.", icon: Building2 },
   { name: "Post Construction Cleaning", slug: "post-construction-cleaning", price: "From $399", desc: "HEPA-grade dust and debris removal after renovation or new construction. Reveals the finished beauty underneath.", icon: Hammer },
@@ -58,7 +58,7 @@ export default function ServicesPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {SERVICES.map(({ name, slug, price, desc, icon: Icon }) => (
+            {SERVICES.map(({ name, slug, desc, icon: Icon }) => (
               <Link key={slug} href={`/services/${slug}`} className="group flex gap-5 bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-6 card-hover hover:border-[#C9A961]/30">
                 <div className="w-14 h-14 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0 group-hover:bg-[#C9A961]/20 transition-colors">
                   <Icon className="w-7 h-7 text-[#C9A961]" />
@@ -66,7 +66,6 @@ export default function ServicesPage() {
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
                     <h2 className="text-[#0A0A0A] font-bold" style={{ fontFamily: "var(--font-playfair)" }}>{name}</h2>
-                    <span className="text-[#C9A961] text-sm font-semibold">{price}</span>
                   </div>
                   <p className="text-gray-500 text-sm leading-relaxed mb-3">{desc}</p>
                   <span className="text-[#C9A961] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">

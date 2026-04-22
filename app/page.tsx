@@ -67,14 +67,14 @@ const websiteSchema = {
 };
 
 const SERVICES_DATA = [
-  { name: "Standard Cleaning", slug: "standard-cleaning", price: "From $129", desc: "Regular upkeep for a spotless home", icon: Home },
-  { name: "Deep Cleaning", slug: "deep-cleaning", price: "From $249", desc: "Top-to-bottom detail for a full reset", icon: Layers },
-  { name: "Move Out Cleaning", slug: "move-out-cleaning", price: "From $299", desc: "Landlord-approved deposit-protection cleans", icon: LogOut },
-  { name: "Recurring Cleaning", slug: "recurring-cleaning", price: "From $99/visit", desc: "Weekly/bi-weekly/monthly with discounts", icon: RefreshCw },
-  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", price: "From $139", desc: "Fast 5-star guest-ready turnovers", icon: Key },
-  { name: "One-Time Cleaning", slug: "one-time-cleaning", price: "From $179", desc: "One clean, no commitment, all the shine", icon: Sparkles },
-  { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning", price: "From $149", desc: "Reliable between-guest cleans", icon: Building2 },
-  { name: "Post Construction Cleaning", slug: "post-construction-cleaning", price: "From $399", desc: "Dust, debris, and detail after renovation", icon: Hammer },
+  { name: "Standard Cleaning", slug: "standard-cleaning", desc: "Regular upkeep for a spotless home", icon: Home },
+  { name: "Deep Cleaning", slug: "deep-cleaning", desc: "Top-to-bottom detail for a full reset", icon: Layers },
+  { name: "Move Out Cleaning", slug: "move-out-cleaning", desc: "Landlord-approved deposit-protection cleans", icon: LogOut },
+  { name: "Recurring Cleaning", slug: "recurring-cleaning", desc: "Weekly/bi-weekly/monthly with discounts", icon: RefreshCw },
+  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", desc: "Fast 5-star guest-ready turnovers", icon: Key },
+  { name: "One-Time Cleaning", slug: "one-time-cleaning", desc: "One clean, no commitment, all the shine", icon: Sparkles },
+  { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning", desc: "Reliable between-guest cleans", icon: Building2 },
+  { name: "Post Construction Cleaning", slug: "post-construction-cleaning", desc: "Dust, debris, and detail after renovation", icon: Hammer },
 ];
 
 const FAQS = [
@@ -278,7 +278,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES_DATA.map(({ name, slug, price, desc, icon: Icon }) => (
+            {SERVICES_DATA.map(({ name, slug, desc, icon: Icon }) => (
               <Link
                 key={slug}
                 href={`/services/${slug}`}
@@ -288,12 +288,11 @@ export default function HomePage() {
                   <Icon className="w-6 h-6 text-[#C9A961]" />
                 </div>
                 <h3
-                  className="font-bold text-[#0A0A0A] mb-1 text-base"
+                  className="font-bold text-[#0A0A0A] mb-2 text-base"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {name}
                 </h3>
-                <p className="text-[#C9A961] text-xs font-semibold mb-2">{price}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
                 <span className="text-[#C9A961] text-sm font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
                   Learn More <ArrowRight className="w-3.5 h-3.5" />
@@ -467,10 +466,10 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Link
-              href="/recent-projects"
+              href="/reviews"
               className="inline-flex items-center gap-2 text-[#C9A961] font-medium hover:gap-3 transition-all"
             >
-              View All Recent Projects <ArrowRight className="w-4 h-4" />
+              View All Reviews &amp; Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

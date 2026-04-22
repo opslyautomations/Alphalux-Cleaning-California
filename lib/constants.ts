@@ -6,14 +6,14 @@ export const GBP_URL = "https://share.google/UG6ei8NirJNiDuHDi";
 export const BASE_URL = "https://www.alphaluxclean.com";
 
 export const SERVICES = [
-  { name: "Standard Cleaning", slug: "standard-cleaning", price: "From $129" },
-  { name: "Deep Cleaning", slug: "deep-cleaning", price: "From $249" },
-  { name: "Move Out Cleaning", slug: "move-out-cleaning", price: "From $299" },
-  { name: "Recurring Cleaning", slug: "recurring-cleaning", price: "From $99/visit" },
-  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", price: "From $139" },
-  { name: "One-Time Cleaning", slug: "one-time-cleaning", price: "From $179" },
-  { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning", price: "From $149" },
-  { name: "Post Construction Cleaning", slug: "post-construction-cleaning", price: "From $399" },
+  { name: "Standard Cleaning", slug: "standard-cleaning" },
+  { name: "Deep Cleaning", slug: "deep-cleaning" },
+  { name: "Move Out Cleaning", slug: "move-out-cleaning" },
+  { name: "Recurring Cleaning", slug: "recurring-cleaning" },
+  { name: "Airbnb Cleaning", slug: "airbnb-cleaning" },
+  { name: "One-Time Cleaning", slug: "one-time-cleaning" },
+  { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning" },
+  { name: "Post Construction Cleaning", slug: "post-construction-cleaning" },
 ];
 
 export const TX_CITIES = [
