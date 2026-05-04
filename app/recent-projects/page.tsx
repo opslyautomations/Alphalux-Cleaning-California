@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "Recent Projects | AlphaLux Cleaning", description: "Real cleaning jobs, real outcomes in TX & CA.", images: [`${BASE_URL}/og/recent-projects.png`] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
-  other: { "theme-color": "#C9A961" },
+  other: { "theme-color": "#253858" },
 };
 
 const PROJECTS = [
@@ -49,12 +49,12 @@ export default function RecentProjectsPage() {
       <section className="bg-[#0A0A0A] pt-32 pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-            <Link href="/" className="hover:text-[#C9A961] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#C9A961]">Recent Projects</span>
+            <span className="text-[#253858]">Recent Projects</span>
           </nav>
           <div className="max-w-3xl">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Case Studies</p>
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Case Studies</p>
             <h1 className="text-white font-bold leading-tight mb-4" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
               Recent Projects &amp; Client Results
             </h1>
@@ -72,19 +72,19 @@ export default function RecentProjectsPage() {
             {PROJECTS.map((p) => (
               <article
                 key={p.type + p.city}
-                className="border border-[#C9A961]/20 rounded-xl p-7 card-hover bg-white"
+                className="border border-[#253858]/20 rounded-xl p-7 card-hover bg-white"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[#C9A961] text-xs font-semibold uppercase tracking-wider bg-[#C9A961]/8 px-3 py-1 rounded-full">
+                  <span className="text-[#253858] text-xs font-semibold uppercase tracking-wider bg-[#253858]/8 px-3 py-1 rounded-full">
                     {p.type}
                   </span>
-                  <span className="text-[#C9A961] text-sm">★★★★★</span>
+                  <span className="text-[#253858] text-sm">★★★★★</span>
                 </div>
                 <p className="text-[#0A0A0A] font-bold mb-3" style={{ fontFamily: "var(--font-playfair)" }}>{p.city}</p>
                 <p className="text-gray-600 text-sm leading-relaxed mb-5">{p.detail}</p>
-                <div className="pt-4 border-t border-[#C9A961]/10 flex items-center justify-between">
-                  <p className="text-[#C9A961] text-sm font-medium">✓ {p.outcome}</p>
-                  <Link href={`/services/${p.service}`} className="text-gray-400 hover:text-[#C9A961] transition-colors text-xs flex items-center gap-1">
+                <div className="pt-4 border-t border-[#253858]/10 flex items-center justify-between">
+                  <p className="text-[#253858] text-sm font-medium">✓ {p.outcome}</p>
+                  <Link href={`/services/${p.service}`} className="text-gray-400 hover:text-[#253858] transition-colors text-xs flex items-center gap-1">
                     This Service <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -102,10 +102,10 @@ export default function RecentProjectsPage() {
           </h2>
           <p className="text-gray-400 mb-8">Join hundreds of satisfied clients across Texas and California.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-7 py-4 rounded-lg hover:bg-[#D4B876] transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-7 py-4 rounded-lg hover:bg-[#2C4267] transition-colors">
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 border border-[#C9A961] text-[#C9A961] font-semibold px-7 py-4 rounded-lg hover:bg-[#C9A961]/10 transition-colors">
+            <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors">
               <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
             </a>
           </div>

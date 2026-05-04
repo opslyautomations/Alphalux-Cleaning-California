@@ -29,12 +29,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: { card: "summary_large_image", title: post.metaTitle, description: post.metaDesc, images: [`${BASE_URL}/og/blog.png`] },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
-    other: { "theme-color": "#C9A961" },
+    other: { "theme-color": "#253858" },
   };
 }
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function renderInlineLinks(text: string, key: string): React.ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  if (parts.length === 1) return text;
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (match) {
+          return <Link key={i} href={match[2]} className="text-[#253858] underline hover:text-[#2C4267] transition-colors">{match[1]}</Link>;
+        }
+        return part;
+      })}
+    </>
+  );
 }
 
 function renderBody(body: string) {
@@ -52,17 +68,17 @@ function renderBody(body: string) {
       <div key={key} className="overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-[#C9A961]/10">
+            <tr className="bg-[#253858]/10">
               {headers.map((h: string, i: number) => (
-                <th key={i} className="text-left px-4 py-2 font-semibold text-[#0A0A0A] border border-[#C9A961]/20">{h}</th>
+                <th key={i} className="text-left px-4 py-2 font-semibold text-[#0A0A0A] border border-[#253858]/20">{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {rows.map((row: string[], ri: number) => (
-              <tr key={ri} className="border-b border-[#C9A961]/10">
+              <tr key={ri} className="border-b border-[#253858]/10">
                 {row.map((cell: string, ci: number) => (
-                  <td key={ci} className="px-4 py-2 text-gray-600 border border-[#C9A961]/10">{cell}</td>
+                  <td key={ci} className="px-4 py-2 text-gray-600 border border-[#253858]/10">{cell}</td>
                 ))}
               </tr>
             ))}
@@ -105,13 +121,13 @@ function renderBody(body: string) {
       );
     } else if (line.startsWith("- ")) {
       elements.push(
-        <li key={key} className="text-gray-700 leading-relaxed ml-4 list-disc">{line.slice(2)}</li>
+        <li key={key} className="text-gray-700 leading-relaxed ml-4 list-disc">{renderInlineLinks(line.slice(2), key)}</li>
       );
     } else if (line.trim() === "") {
       elements.push(<div key={key} className="mt-3" />);
     } else {
       elements.push(
-        <p key={key} className="text-gray-700 leading-relaxed mt-3">{line}</p>
+        <p key={key} className="text-gray-700 leading-relaxed mt-3">{renderInlineLinks(line, key)}</p>
       );
     }
   });
@@ -152,23 +168,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   };
 
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
       {/* Hero */}
       <section className="bg-[#0A0A0A] pt-32 pb-14 lg:pt-40 lg:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
-            <Link href="/" className="hover:text-[#C9A961] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-[#C9A961] transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-[#253858] transition-colors">Blog</Link>
             <span>/</span>
-            <span className="text-[#C9A961] line-clamp-1">{post.title}</span>
+            <span className="text-[#253858] line-clamp-1">{post.title}</span>
           </nav>
           <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span className="text-[#C9A961] text-xs font-semibold uppercase tracking-wider bg-[#C9A961]/10 px-3 py-1 rounded-full">
+            <span className="text-[#253858] text-xs font-semibold uppercase tracking-wider bg-[#253858]/10 px-3 py-1 rounded-full">
               {post.category}
             </span>
             <span className="text-gray-500 text-sm">{formatDate(post.publishDate)}</span>
@@ -189,8 +216,30 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
+      {/* FAQ Section */}
+      {post.faqs && post.faqs.length > 0 && (
+        <section className="bg-[#F8F7F4] py-14 border-t border-[#253858]/10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-[#0A0A0A] font-bold mb-8" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.2rem, 2vw, 1.6rem)" }}>
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {post.faqs.map((faq, i) => (
+                <details key={i} className="bg-white border border-[#253858]/10 rounded-xl p-6 group">
+                  <summary className="text-[#0A0A0A] font-semibold cursor-pointer list-none flex items-center justify-between gap-4" style={{ fontFamily: "var(--font-playfair)" }}>
+                    {faq.q}
+                    <span className="text-[#253858] shrink-0 text-xl group-open:rotate-45 transition-transform duration-200">+</span>
+                  </summary>
+                  <p className="text-gray-600 leading-relaxed mt-4 text-sm">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Mid-article CTA */}
-      <section className="bg-[#F8F7F4] py-10 border-t border-[#C9A961]/10 border-b border-[#C9A961]/10">
+      <section className="bg-[#F8F7F4] py-10 border-t border-[#253858]/10 border-b border-[#253858]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
@@ -200,10 +249,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <p className="text-gray-500 text-sm">Eco-friendly, non-toxic cleaning across 17 cities in TX &amp; CA.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-6 py-3 rounded-lg hover:bg-[#D4B876] transition-colors text-sm">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-6 py-3 rounded-lg hover:bg-[#2C4267] transition-colors text-sm">
                 Get a Free Quote <ArrowRight className="w-4 h-4" />
               </Link>
-              <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 border border-[#C9A961] text-[#C9A961] font-semibold px-6 py-3 rounded-lg hover:bg-[#C9A961]/10 transition-colors text-sm">
+              <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-6 py-3 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm">
                 <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
               </a>
             </div>
@@ -220,21 +269,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {moreRelated.map((rel) => (
-                <Link key={rel.slug} href={`/blog/${rel.slug}`} className="group bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-5 card-hover hover:border-[#C9A961]/30">
-                  <span className="text-[#C9A961] text-xs font-semibold uppercase tracking-wider bg-[#C9A961]/10 px-2 py-0.5 rounded-full mb-3 inline-block">
+                <Link key={rel.slug} href={`/blog/${rel.slug}`} className="group bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-5 card-hover hover:border-[#253858]/30">
+                  <span className="text-[#253858] text-xs font-semibold uppercase tracking-wider bg-[#253858]/10 px-2 py-0.5 rounded-full mb-3 inline-block">
                     {rel.category}
                   </span>
-                  <h3 className="text-[#0A0A0A] font-bold leading-snug mb-3 group-hover:text-[#C9A961] transition-colors text-sm" style={{ fontFamily: "var(--font-playfair)" }}>
+                  <h3 className="text-[#0A0A0A] font-bold leading-snug mb-3 group-hover:text-[#253858] transition-colors text-sm" style={{ fontFamily: "var(--font-playfair)" }}>
                     {rel.title}
                   </h3>
-                  <span className="text-[#C9A961] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-[#253858] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
               ))}
             </div>
             <div className="mt-8">
-              <Link href="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#C9A961] transition-colors text-sm">
+              <Link href="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#253858] transition-colors text-sm">
                 <ArrowLeft className="w-4 h-4" /> Back to All Articles
               </Link>
             </div>

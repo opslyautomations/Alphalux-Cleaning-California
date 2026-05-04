@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "Contact AlphaLux Cleaning | Free Quote", description: "Get a free quote for eco-friendly house cleaning in TX & CA.", images: [`${BASE_URL}/og/contact.png`] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
-  other: { "theme-color": "#C9A961" },
+  other: { "theme-color": "#253858" },
 };
 
 const breadcrumbSchema = {
@@ -41,12 +41,12 @@ export default function ContactPage() {
       <section className="bg-[#0A0A0A] pt-32 pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-            <Link href="/" className="hover:text-[#C9A961] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#C9A961]">Contact</span>
+            <span className="text-[#253858]">Contact</span>
           </nav>
           <div className="max-w-2xl">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Free Quote</p>
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Free Quote</p>
             <h1 className="text-white font-bold leading-tight mb-4" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
               Get a Free Quote from AlphaLux Cleaning
             </h1>
@@ -66,27 +66,27 @@ export default function ContactPage() {
               </h2>
               <div className="space-y-6">
                 <a href={PHONE_TEL} className="flex items-start gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0 group-hover:bg-[#C9A961]/20 transition-colors">
-                    <Phone className="w-5 h-5 text-[#C9A961]" />
+                  <div className="w-11 h-11 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0 group-hover:bg-[#253858]/20 transition-colors">
+                    <Phone className="w-5 h-5 text-[#253858]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Phone</p>
-                    <p className="text-[#0A0A0A] font-semibold group-hover:text-[#C9A961] transition-colors">{PHONE_DISPLAY}</p>
+                    <p className="text-[#0A0A0A] font-semibold group-hover:text-[#253858] transition-colors">{PHONE_DISPLAY}</p>
                     <p className="text-gray-500 text-sm">Click to call — we pick up</p>
                   </div>
                 </a>
                 <a href={EMAIL_MAILTO} className="flex items-start gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0 group-hover:bg-[#C9A961]/20 transition-colors">
-                    <Mail className="w-5 h-5 text-[#C9A961]" />
+                  <div className="w-11 h-11 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0 group-hover:bg-[#253858]/20 transition-colors">
+                    <Mail className="w-5 h-5 text-[#253858]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Email</p>
-                    <p className="text-[#0A0A0A] font-semibold group-hover:text-[#C9A961] transition-colors">{EMAIL}</p>
+                    <p className="text-[#0A0A0A] font-semibold group-hover:text-[#253858] transition-colors">{EMAIL}</p>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-[#C9A961]" />
+                  <div className="w-11 h-11 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-[#253858]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Service Area</p>
@@ -95,8 +95,8 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-[#C9A961]" />
+                  <div className="w-11 h-11 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-[#253858]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Hours</p>
@@ -105,8 +105,8 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0">
-                    <Leaf className="w-5 h-5 text-[#C9A961]" />
+                  <div className="w-11 h-11 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
+                    <Leaf className="w-5 h-5 text-[#253858]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Our Commitment</p>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                 <h3 className="text-[#0A0A0A] font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
                   Direct Call
                 </h3>
-                <a href={PHONE_TEL} className="inline-flex items-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#D4B876] transition-colors">
+                <a href={PHONE_TEL} className="inline-flex items-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#2C4267] transition-colors">
                   <Phone className="w-4 h-4" />
                   Call {PHONE_DISPLAY}
                 </a>
@@ -128,7 +128,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right — Form */}
-            <div className="bg-[#F8F7F4] border border-[#C9A961]/10 rounded-2xl p-6 lg:p-8">
+            <div className="bg-[#F8F7F4] border border-[#253858]/10 rounded-2xl p-6 lg:p-8">
               <h2 className="text-[#0A0A0A] font-bold mb-2" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.2rem, 2vw, 1.5rem)" }}>
                 Request Your Free Quote
               </h2>
@@ -147,12 +147,12 @@ export default function ContactPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div>
-              <h3 className="text-[#C9A961] text-xs uppercase tracking-widest font-medium mb-4">Texas</h3>
+              <h3 className="text-[#253858] text-xs uppercase tracking-widest font-medium mb-4">Texas</h3>
               <ul className="space-y-2">
                 {TX_CITIES.map((c) => (
                   <li key={c.slug}>
-                    <Link href={`/locations/tx/${c.slug}`} className="text-gray-400 hover:text-[#C9A961] transition-colors text-sm flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#C9A961]" />
+                    <Link href={`/locations/tx/${c.slug}`} className="text-gray-400 hover:text-[#253858] transition-colors text-sm flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#253858]" />
                       House Cleaning in {c.name}, TX
                     </Link>
                   </li>
@@ -160,12 +160,12 @@ export default function ContactPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-[#C9A961] text-xs uppercase tracking-widest font-medium mb-4">California</h3>
+              <h3 className="text-[#253858] text-xs uppercase tracking-widest font-medium mb-4">California</h3>
               <ul className="space-y-2">
                 {CA_CITIES.map((c) => (
                   <li key={c.slug}>
-                    <Link href={`/locations/ca/${c.slug}`} className="text-gray-400 hover:text-[#C9A961] transition-colors text-sm flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#C9A961]" />
+                    <Link href={`/locations/ca/${c.slug}`} className="text-gray-400 hover:text-[#253858] transition-colors text-sm flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#253858]" />
                       House Cleaning in {c.name}, CA
                     </Link>
                   </li>

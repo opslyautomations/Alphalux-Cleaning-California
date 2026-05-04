@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #C9A961;
-  --color-gold-accent: #D4B876;
-  --color-gold-dark: #A88B47;
+  --color-brand-navy: #253858;
+  --color-brand-navy-light: #2C4267;
+  --color-brand-navy-dark: #1A2A45;
+  --color-brand-navy-50: #EEF1F6;
+  --color-brand-ivory: #F8F6F1;
+  --color-brand-charcoal: #1F1F23;
   --color-brand-black: #0A0A0A;
   --color-charcoal: #1A1A1A;
   --color-off-white: #F8F7F4;
@@ -39,12 +42,12 @@ h1, h2, h3, h4, h5 {
 /* Gold gradient divider */
 .gold-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #C9A961, transparent);
+  background: linear-gradient(to right, transparent, #253858, transparent);
 }
 
 /* Gold radial glow */
 .gold-glow {
-  background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(37, 56, 88, 0.15) 0%, transparent 70%);
 }
 
 /* Section fade-in animation */
@@ -69,7 +72,7 @@ h1, h2, h3, h4, h5 {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(201, 169, 97, 0.15);
+  box-shadow: 0 12px 40px rgba(37, 56, 88, 0.15);
 }
 
 /* Dropdown menu */
@@ -94,6 +97,6 @@ h1, h2, h3, h4, h5 {
   background: #0A0A0A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9A961;
+  background: #253858;
   border-radius: 3px;
 }

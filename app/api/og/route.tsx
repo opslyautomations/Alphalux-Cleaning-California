@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
           style={{
             position: "absolute",
             inset: "20px",
-            border: "2px solid #C9A961",
+            border: "2px solid #253858",
             borderRadius: "16px",
             opacity: 0.4,
           }}
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
             alignItems: "center",
           }}
         >
-          <span style={{ color: "#C9A961", fontSize: "22px", fontWeight: "bold", letterSpacing: "2px" }}>
+          <span style={{ color: "#253858", fontSize: "22px", fontWeight: "bold", letterSpacing: "2px" }}>
             AlphaLux
           </span>
           <span style={{ color: "#ffffff", fontSize: "10px", letterSpacing: "8px", marginTop: "2px" }}>
@@ -98,14 +98,14 @@ export async function GET(req: NextRequest) {
             display: "flex",
             alignItems: "center",
             gap: "32px",
-            color: "#C9A961",
+            color: "#253858",
             fontSize: "16px",
           }}
         >
           <span>(972) 559-0223</span>
-          <span style={{ color: "#C9A961", opacity: 0.4 }}>·</span>
+          <span style={{ color: "#253858", opacity: 0.4 }}>·</span>
           <span>alphaluxclean.com</span>
-          <span style={{ color: "#C9A961", opacity: 0.4 }}>·</span>
+          <span style={{ color: "#253858", opacity: 0.4 }}>·</span>
           <span>17 Cities in TX &amp; CA</span>
         </div>
       </div>

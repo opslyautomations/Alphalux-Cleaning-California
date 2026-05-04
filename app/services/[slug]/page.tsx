@@ -243,12 +243,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const data = SERVICE_DATA[slug];
   if (!data) return {};
   return {
-    title: `${data.name} | AlphaLux Cleaning — Texas & California`,
-    description: `${data.name} across Texas & California. Eco-friendly, non-toxic cleaning — licensed & insured. Free quote from AlphaLux Cleaning.`,
+    title: `${data.name} | AlphaLux Cleaning TX & CA`,
+    description: `${data.name} in Texas & California. Eco-friendly, non-toxic — licensed & insured. Free quote from AlphaLux Cleaning.`,
     alternates: { canonical: `${BASE_URL}/services/${slug}` },
     openGraph: {
       type: "website",
-      title: `${data.name} | AlphaLux Cleaning — Texas & California`,
+      title: `${data.name} | AlphaLux Cleaning TX & CA`,
       description: `${data.name} — eco-friendly, non-toxic. Serving 17 cities in TX & CA.`,
       url: `${BASE_URL}/services/${slug}`,
       siteName: "AlphaLux Cleaning",
@@ -257,7 +257,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: { card: "summary_large_image", title: `${data.name} | AlphaLux Cleaning`, description: `${data.name} — eco-friendly, non-toxic cleaning in TX & CA.`, images: [`${BASE_URL}/og/services-${slug}.png`] },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
-    other: { "theme-color": "#C9A961" },
+    other: { "theme-color": "#253858" },
   };
 }
 
@@ -309,18 +309,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="bg-[#0A0A0A] pt-32 pb-16 lg:pt-40 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
-            <Link href="/" className="hover:text-[#C9A961] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-[#C9A961] transition-colors">Services</Link>
+            <Link href="/services" className="hover:text-[#253858] transition-colors">Services</Link>
             <span>/</span>
-            <span className="text-[#C9A961]">{data.name}</span>
+            <span className="text-[#253858]">{data.name}</span>
           </nav>
           <div className="flex items-start gap-5">
-            <div className="w-16 h-16 rounded-full bg-[#C9A961]/15 flex items-center justify-center shrink-0">
-              <Icon className="w-8 h-8 text-[#C9A961]" />
+            <div className="w-16 h-16 rounded-full bg-[#253858]/15 flex items-center justify-center shrink-0">
+              <Icon className="w-8 h-8 text-[#253858]" />
             </div>
             <div>
-              <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-2">AlphaLux Cleaning</p>
+              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-2">AlphaLux Cleaning</p>
               <h1 className="text-white font-bold leading-tight" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
                 {data.name} in Texas &amp; California
               </h1>
@@ -345,7 +345,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {data.includes.map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-[#C9A961] shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[#253858] shrink-0 mt-0.5" />
                 <span className="text-gray-700 text-sm">{item}</span>
               </div>
             ))}
@@ -361,9 +361,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.benefits.map(({ title, desc }) => (
-              <div key={title} className="bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-full bg-[#C9A961]/10 flex items-center justify-center mb-4">
-                  <CheckCircle className="w-5 h-5 text-[#C9A961]" />
+              <div key={title} className="bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-6">
+                <div className="w-10 h-10 rounded-full bg-[#253858]/10 flex items-center justify-center mb-4">
+                  <CheckCircle className="w-5 h-5 text-[#253858]" />
                 </div>
                 <h3 className="text-[#0A0A0A] font-bold mb-2 text-sm" style={{ fontFamily: "var(--font-playfair)" }}>{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -386,7 +386,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               { step: "3", title: "Enjoy a Clean Home", desc: "We clean, you relax. Every surface is detailed to AlphaLux's luxury-level standard." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="flex gap-5">
-                <div className="w-12 h-12 rounded-full bg-[#C9A961] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-full bg-[#253858] flex items-center justify-center shrink-0">
                   <span className="text-[#0A0A0A] font-bold text-lg">{step}</span>
                 </div>
                 <div>
@@ -417,9 +417,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {relatedServices.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-[#F8F7F4] border border-[#C9A961]/10 rounded-xl p-5 card-hover hover:border-[#C9A961]/30">
-                <h3 className="text-[#0A0A0A] font-bold mb-3 text-sm group-hover:text-[#C9A961] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
-                <span className="text-[#C9A961] text-sm font-medium inline-flex items-center gap-1">View Service <ArrowRight className="w-3.5 h-3.5" /></span>
+              <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-5 card-hover hover:border-[#253858]/30">
+                <h3 className="text-[#0A0A0A] font-bold mb-3 text-sm group-hover:text-[#253858] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
+                <span className="text-[#253858] text-sm font-medium inline-flex items-center gap-1">View Service <ArrowRight className="w-3.5 h-3.5" /></span>
               </Link>
             ))}
           </div>
@@ -431,7 +431,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get Started</p>
+              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get Started</p>
               <h2 className="text-white font-bold leading-tight mb-4" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
                 Book Your {data.name} Today
               </h2>
@@ -439,17 +439,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 Available across 17 cities in Texas and California. Same-week scheduling often available.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#D4B876] transition-colors text-sm">
+                <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#2C4267] transition-colors text-sm">
                   <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
                 </a>
               </div>
               <div className="mt-6 flex flex-wrap gap-4 text-xs text-gray-500">
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />Licensed &amp; Insured</span>
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />100% Non-Toxic</span>
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />Background-Checked Teams</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#253858]" />Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#253858]" />100% Non-Toxic</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#253858]" />Background-Checked Teams</span>
               </div>
             </div>
-            <div className="bg-[#1A1A1A] border border-[#C9A961]/20 rounded-2xl p-6">
+            <div className="bg-[#1A1A1A] border border-[#253858]/20 rounded-2xl p-6">
               <h3 className="text-white font-bold mb-1" style={{ fontFamily: "var(--font-playfair)" }}>Get Your Free Quote</h3>
               <p className="text-gray-500 text-sm mb-5">Response within 24 hours.</p>
               <GHLForm />

@@ -14,9 +14,9 @@ export default function PrivacyPolicyPage() {
     <section className="bg-white pt-32 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-          <Link href="/" className="hover:text-[#C9A961] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
           <span>/</span>
-          <span className="text-[#C9A961]">Privacy Policy</span>
+          <span className="text-[#253858]">Privacy Policy</span>
         </nav>
         <h1 className="font-bold text-[#0A0A0A] mb-8" style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>
           Privacy Policy
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-[#0A0A0A] font-bold text-xl mt-8" style={{ fontFamily: "var(--font-playfair)" }}>How We Use Your Information</h2>
           <p>We use the information we collect to provide and improve our services, communicate with you about your cleaning appointments, send scheduling confirmations and reminders, and respond to your inquiries.</p>
           <h2 className="text-[#0A0A0A] font-bold text-xl mt-8" style={{ fontFamily: "var(--font-playfair)" }}>Contact Us</h2>
-          <p>If you have questions about this Privacy Policy, contact us at <a href={EMAIL_MAILTO} className="text-[#C9A961] hover:underline">{EMAIL}</a> or call <a href={PHONE_TEL} className="text-[#C9A961] hover:underline">{PHONE_DISPLAY}</a>.</p>
+          <p>If you have questions about this Privacy Policy, contact us at <a href={EMAIL_MAILTO} className="text-[#253858] hover:underline">{EMAIL}</a> or call <a href={PHONE_TEL} className="text-[#253858] hover:underline">{PHONE_DISPLAY}</a>.</p>
         </div>
       </div>
     </section>

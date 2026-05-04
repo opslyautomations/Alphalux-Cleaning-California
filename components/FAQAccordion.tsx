@@ -13,7 +13,7 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
       {faqs.map((faq, i) => (
         <div
           key={i}
-          className="border border-[#C9A961]/20 rounded-xl overflow-hidden"
+          className="border border-[#253858]/20 rounded-xl overflow-hidden"
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
@@ -21,7 +21,7 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
           >
             <span className="font-medium text-[#1A1A1A] pr-4">{faq.q}</span>
             <ChevronDown
-              className={`w-5 h-5 text-[#C9A961] shrink-0 transition-transform duration-200 ${
+              className={`w-5 h-5 text-[#253858] shrink-0 transition-transform duration-200 ${
                 open === i ? "rotate-180" : ""
               }`}
             />

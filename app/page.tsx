@@ -152,7 +152,7 @@ export default function HomePage() {
         <div
           className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle, #C9A961 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, #253858 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -161,7 +161,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left */}
             <div>
-              <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
                 Eco-Conscious House Cleaning
               </p>
               <h1
@@ -173,7 +173,7 @@ export default function HomePage() {
               >
                 Luxury Clean.
                 <br />
-                <span className="text-[#C9A961]">Non-Toxic.</span>
+                <span className="text-[#253858]">Non-Toxic.</span>
                 <br />
                 Zero Compromise.
               </h1>
@@ -185,14 +185,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-7 py-4 rounded-lg hover:bg-[#D4B876] transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-7 py-4 rounded-lg hover:bg-[#2C4267] transition-colors text-sm"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href={PHONE_TEL}
-                  className="inline-flex items-center justify-center gap-2 border border-[#C9A961] text-[#C9A961] font-semibold px-7 py-4 rounded-lg hover:bg-[#C9A961]/10 transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   Call {PHONE_DISPLAY}
@@ -202,29 +202,29 @@ export default function HomePage() {
               {/* Trust row */}
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
                 <span className="flex items-center gap-1.5">
-                  <span className="text-[#C9A961]">★★★★★</span>
+                  <span className="text-[#253858]">★★★★★</span>
                   5-Star Rated
                 </span>
-                <span className="text-[#C9A961]/40">·</span>
+                <span className="text-[#253858]/40">·</span>
                 <span className="flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5 text-[#C9A961]" />
+                  <Shield className="w-3.5 h-3.5 text-[#253858]" />
                   Licensed &amp; Insured
                 </span>
-                <span className="text-[#C9A961]/40">·</span>
+                <span className="text-[#253858]/40">·</span>
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#C9A961]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#253858]" />
                   17 Cities Served
                 </span>
-                <span className="text-[#C9A961]/40">·</span>
+                <span className="text-[#253858]/40">·</span>
                 <span className="flex items-center gap-1.5">
-                  <Leaf className="w-3.5 h-3.5 text-[#C9A961]" />
+                  <Leaf className="w-3.5 h-3.5 text-[#253858]" />
                   Eco-Friendly Certified
                 </span>
               </div>
             </div>
 
             {/* Right — GHL Form */}
-            <div className="bg-[#1A1A1A] border border-[#C9A961]/30 rounded-2xl p-6 lg:p-8">
+            <div className="bg-[#1A1A1A] border border-[#253858]/30 rounded-2xl p-6 lg:p-8">
               <h2
                 className="text-white font-bold text-xl mb-1"
                 style={{ fontFamily: "var(--font-playfair)" }}
@@ -239,7 +239,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <section className="bg-[#0A0A0A] border-t border-[#C9A961]/10">
+      <section className="bg-[#0A0A0A] border-t border-[#253858]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -249,8 +249,8 @@ export default function HomePage() {
               { icon: MapPin, text: "17 Cities Across TX & CA" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#C9A961]/10 flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-[#C9A961]" />
+                <div className="w-10 h-10 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
+                  <Icon className="w-5 h-5 text-[#253858]" />
                 </div>
                 <span className="text-gray-300 text-sm font-medium">{text}</span>
               </div>
@@ -263,7 +263,7 @@ export default function HomePage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               What We Offer
             </p>
             <h2
@@ -282,10 +282,10 @@ export default function HomePage() {
               <Link
                 key={slug}
                 href={`/services/${slug}`}
-                className="group bg-white border border-gray-100 rounded-xl p-6 card-hover hover:border-[#C9A961]/40"
+                className="group bg-white border border-gray-100 rounded-xl p-6 card-hover hover:border-[#253858]/40"
               >
-                <div className="w-12 h-12 rounded-full bg-[#C9A961]/10 flex items-center justify-center mb-4 group-hover:bg-[#C9A961]/20 transition-colors">
-                  <Icon className="w-6 h-6 text-[#C9A961]" />
+                <div className="w-12 h-12 rounded-full bg-[#253858]/10 flex items-center justify-center mb-4 group-hover:bg-[#253858]/20 transition-colors">
+                  <Icon className="w-6 h-6 text-[#253858]" />
                 </div>
                 <h3
                   className="font-bold text-[#0A0A0A] mb-2 text-base"
@@ -294,7 +294,7 @@ export default function HomePage() {
                   {name}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <span className="text-[#C9A961] text-sm font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
+                <span className="text-[#253858] text-sm font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
                   Learn More <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
@@ -313,7 +313,7 @@ export default function HomePage() {
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-14">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Our Difference
             </p>
             <h2
@@ -343,8 +343,8 @@ export default function HomePage() {
               },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-[#C9A961]/15 flex items-center justify-center mx-auto mb-5">
-                  <Icon className="w-8 h-8 text-[#C9A961]" />
+                <div className="w-16 h-16 rounded-full bg-[#253858]/15 flex items-center justify-center mx-auto mb-5">
+                  <Icon className="w-8 h-8 text-[#253858]" />
                 </div>
                 <h3
                   className="text-white font-bold text-lg mb-3"
@@ -363,7 +363,7 @@ export default function HomePage() {
       <section className="bg-[#F8F7F4] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Where We Work
             </p>
             <h2
@@ -380,7 +380,7 @@ export default function HomePage() {
                 className="text-[#0A0A0A] font-bold text-lg mb-4 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                <span className="w-6 h-6 rounded-full bg-[#C9A961] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">TX</span>
+                <span className="w-6 h-6 rounded-full bg-[#253858] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">TX</span>
                 Texas
               </h3>
               <ul className="space-y-2">
@@ -388,9 +388,9 @@ export default function HomePage() {
                   <li key={c.slug}>
                     <Link
                       href={`/locations/tx/${c.slug}`}
-                      className="flex items-center gap-2 text-gray-600 hover:text-[#C9A961] transition-colors font-medium"
+                      className="flex items-center gap-2 text-gray-600 hover:text-[#253858] transition-colors font-medium"
                     >
-                      <ArrowRight className="w-3.5 h-3.5 text-[#C9A961]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#253858]" />
                       House Cleaning in {c.name}
                     </Link>
                   </li>
@@ -402,7 +402,7 @@ export default function HomePage() {
                 className="text-[#0A0A0A] font-bold text-lg mb-4 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                <span className="w-6 h-6 rounded-full bg-[#C9A961] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">CA</span>
+                <span className="w-6 h-6 rounded-full bg-[#253858] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">CA</span>
                 California
               </h3>
               <ul className="space-y-2">
@@ -410,9 +410,9 @@ export default function HomePage() {
                   <li key={c.slug}>
                     <Link
                       href={`/locations/ca/${c.slug}`}
-                      className="flex items-center gap-2 text-gray-600 hover:text-[#C9A961] transition-colors font-medium"
+                      className="flex items-center gap-2 text-gray-600 hover:text-[#253858] transition-colors font-medium"
                     >
-                      <ArrowRight className="w-3.5 h-3.5 text-[#C9A961]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#253858]" />
                       House Cleaning in {c.name}
                     </Link>
                   </li>
@@ -423,7 +423,7 @@ export default function HomePage() {
 
           <p className="text-center text-gray-500 text-sm mt-8">
             Don&apos;t see your city?{" "}
-            <a href={PHONE_TEL} className="text-[#C9A961] hover:underline font-medium">
+            <a href={PHONE_TEL} className="text-[#253858] hover:underline font-medium">
               Call {PHONE_DISPLAY}
             </a>{" "}
             — we may still serve you.
@@ -435,7 +435,7 @@ export default function HomePage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Case Studies
             </p>
             <h2
@@ -450,13 +450,13 @@ export default function HomePage() {
             {RECENT_PROJECTS.map((p) => (
               <div
                 key={p.type}
-                className="border border-[#C9A961]/20 rounded-xl p-6 card-hover"
+                className="border border-[#253858]/20 rounded-xl p-6 card-hover"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[#C9A961] text-xs font-semibold uppercase tracking-wider">
+                  <span className="text-[#253858] text-xs font-semibold uppercase tracking-wider">
                     {p.type}
                   </span>
-                  <span className="text-[#C9A961]">★★★★★</span>
+                  <span className="text-[#253858]">★★★★★</span>
                 </div>
                 <p className="text-[#0A0A0A] font-semibold mb-1 text-sm">{p.city}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.outcome}</p>
@@ -467,7 +467,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-[#C9A961] font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-[#253858] font-medium hover:gap-3 transition-all"
             >
               View All Reviews &amp; Projects <ArrowRight className="w-4 h-4" />
             </Link>
@@ -479,7 +479,7 @@ export default function HomePage() {
       <section className="bg-[#0A0A0A] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Client Reviews
             </p>
             <h2
@@ -494,9 +494,9 @@ export default function HomePage() {
             {REVIEWS.map((r) => (
               <div
                 key={r.name}
-                className="bg-[#1A1A1A] border border-[#C9A961]/15 rounded-xl p-7 card-hover"
+                className="bg-[#1A1A1A] border border-[#253858]/15 rounded-xl p-7 card-hover"
               >
-                <Quote className="w-8 h-8 text-[#C9A961]/30 mb-4" />
+                <Quote className="w-8 h-8 text-[#253858]/30 mb-4" />
                 <p className="text-gray-300 leading-relaxed mb-6 text-sm">
                   &ldquo;{r.text}&rdquo;
                 </p>
@@ -505,7 +505,7 @@ export default function HomePage() {
                     <p className="text-white font-semibold text-sm">{r.name}</p>
                     <p className="text-gray-500 text-xs">{r.city} · {r.service}</p>
                   </div>
-                  <span className="text-[#C9A961] text-sm">★★★★★</span>
+                  <span className="text-[#253858] text-sm">★★★★★</span>
                 </div>
               </div>
             ))}
@@ -514,7 +514,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-[#C9A961] font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-[#253858] font-medium hover:gap-3 transition-all"
             >
               Read All Reviews <ArrowRight className="w-4 h-4" />
             </Link>
@@ -526,7 +526,7 @@ export default function HomePage() {
       <section className="bg-[#F8F7F4] py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Common Questions
             </p>
             <h2
@@ -544,7 +544,7 @@ export default function HomePage() {
       <section
         className="py-20 lg:py-28 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0A0A0A 0%, #1a1200 50%, #0A0A0A 100%)",
+          background: "linear-gradient(135deg, #0A0A0A 0%, #0A1520 50%, #0A0A0A 100%)",
         }}
       >
         <div
@@ -555,12 +555,12 @@ export default function HomePage() {
         />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           {/* Gold corner accents */}
-          <div className="absolute top-0 left-4 w-8 h-8 border-t-2 border-l-2 border-[#C9A961]/40 rounded-tl-lg" />
-          <div className="absolute top-0 right-4 w-8 h-8 border-t-2 border-r-2 border-[#C9A961]/40 rounded-tr-lg" />
-          <div className="absolute bottom-0 left-4 w-8 h-8 border-b-2 border-l-2 border-[#C9A961]/40 rounded-bl-lg" />
-          <div className="absolute bottom-0 right-4 w-8 h-8 border-b-2 border-r-2 border-[#C9A961]/40 rounded-br-lg" />
+          <div className="absolute top-0 left-4 w-8 h-8 border-t-2 border-l-2 border-[#253858]/40 rounded-tl-lg" />
+          <div className="absolute top-0 right-4 w-8 h-8 border-t-2 border-r-2 border-[#253858]/40 rounded-tr-lg" />
+          <div className="absolute bottom-0 left-4 w-8 h-8 border-b-2 border-l-2 border-[#253858]/40 rounded-bl-lg" />
+          <div className="absolute bottom-0 right-4 w-8 h-8 border-b-2 border-r-2 border-[#253858]/40 rounded-br-lg" />
 
-          <p className="text-[#C9A961] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             Get Started Today
           </p>
           <h2
@@ -575,14 +575,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#C9A961] text-[#0A0A0A] font-semibold px-8 py-4 rounded-lg hover:bg-[#D4B876] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-8 py-4 rounded-lg hover:bg-[#2C4267] transition-colors"
             >
               Get a Free Quote
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href={PHONE_TEL}
-              className="inline-flex items-center justify-center gap-2 border border-[#C9A961] text-[#C9A961] font-semibold px-8 py-4 rounded-lg hover:bg-[#C9A961]/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
               Call {PHONE_DISPLAY}
@@ -590,19 +590,19 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap justify-center gap-5 mt-8 text-xs text-gray-500">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
               Licensed &amp; Insured
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
               100% Non-Toxic
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
               Same-Week Availability
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#C9A961]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
               17 Cities Served
             </span>
           </div>

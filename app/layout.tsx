@@ -21,16 +21,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
-  description:
-    "Professional eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. Serving 17 cities. Get a free quote today.",
   metadataBase: new URL("https://www.alphaluxclean.com"),
+  title: {
+    default: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
+    template: "%s | AlphaLux Cleaning",
+  },
+  description:
+    "Eco-friendly, non-toxic house cleaning in Texas & California. Licensed, insured, 5-star rated. Free quote in 60 seconds.",
   alternates: { canonical: "https://www.alphaluxclean.com" },
   openGraph: {
     type: "website",
-    title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
+    title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     description:
-      "Professional eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. Serving 17 cities.",
+      "Eco-friendly, non-toxic house cleaning in TX & CA. Licensed & insured. Free quote in 60 seconds.",
     url: "https://www.alphaluxclean.com",
     siteName: "AlphaLux Cleaning",
     locale: "en_US",
@@ -40,16 +43,16 @@ export const metadata: Metadata = {
         secureUrl: "https://www.alphaluxclean.com/og/homepage.png",
         width: 1200,
         height: 630,
-        alt: "AlphaLux Cleaning — Eco-Friendly House Cleaning in Texas & California",
+        alt: "AlphaLux Cleaning — Non-Toxic House Cleaning in Texas & California",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
+    title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     description:
-      "Professional eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured.",
+      "Eco-friendly, non-toxic house cleaning in TX & CA. Licensed & insured. Free quote in 60 seconds.",
     images: ["https://www.alphaluxclean.com/og/homepage.png"],
   },
   robots: {
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
     "max-snippet": -1,
     "max-video-preview": -1,
   },
-  other: { "theme-color": "#C9A961" },
+  other: { "theme-color": "#253858" },
 };
 
 const schemaOrg = {
@@ -71,7 +74,7 @@ const schemaOrg = {
   url: "https://www.alphaluxclean.com",
   telephone: "+19725590223",
   email: "info@alphaluxclean.com",
-  image: "https://www.alphaluxclean.com/og/homepage.png",
+  image: "https://www.alphaluxclean.com/alphalux-logo.png",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
