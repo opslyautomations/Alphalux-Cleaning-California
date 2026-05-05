@@ -1,6 +1,6 @@
 export default function GHLForm({ className = "" }: { className?: string }) {
   return (
-    <div className={`w-full ${className}`} style={{ height: "1095px" }}>
+    <div className={`w-full ${className}`} style={{ height: "625px" }}>
       <iframe
         src="https://api.opslyautomations.com/widget/form/Q6zPRF4U3Tx3H9TjW0le"
         style={{ width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
@@ -13,7 +13,7 @@ export default function GHLForm({ className = "" }: { className?: string }) {
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="House Cleaning Lead Generation"
-        data-height="1095"
+        data-height="625"
         data-layout-iframe-id="inline-Q6zPRF4U3Tx3H9TjW0le"
         data-form-id="Q6zPRF4U3Tx3H9TjW0le"
         title="House Cleaning Lead Generation"
