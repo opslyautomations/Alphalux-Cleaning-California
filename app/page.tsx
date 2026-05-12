@@ -195,14 +195,14 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  Cali {CA_PHONE_DISPLAY}
+                  Call Cali
                 </a>
                 <a
                   href={TX_PHONE_TEL}
                   className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  Texas {TX_PHONE_DISPLAY}
+                  Call Texas
                 </a>
               </div>
 
@@ -431,11 +431,11 @@ export default function HomePage() {
           <p className="text-center text-gray-500 text-sm mt-8">
             Don&apos;t see your city? Call{" "}
             <a href={CA_PHONE_TEL} className="text-[#253858] hover:underline font-medium">
-              CA {CA_PHONE_DISPLAY}
+              Cali
             </a>{" "}
             or{" "}
             <a href={TX_PHONE_TEL} className="text-[#253858] hover:underline font-medium">
-              TX {TX_PHONE_DISPLAY}
+              Texas
             </a>{" "}
             — we may still serve you.
           </p>
@@ -596,14 +596,14 @@ export default function HomePage() {
               className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              Cali {CA_PHONE_DISPLAY}
+              Call Cali
             </a>
             <a
               href={TX_PHONE_TEL}
               className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              Texas {TX_PHONE_DISPLAY}
+              Call Texas
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-5 mt-8 text-xs text-gray-500">
