@@ -1,5 +1,10 @@
 export const PHONE_DISPLAY = "(972) 559-0223";
 export const PHONE_TEL = "tel:+19725590223";
+
+export const CA_PHONE_DISPLAY = "(323) 300-5528";
+export const CA_PHONE_TEL = "tel:+13233005528";
+export const TX_PHONE_DISPLAY = "(972) 559-0223";
+export const TX_PHONE_TEL = "tel:+19725590223";
 export const EMAIL = "info@alphaluxclean.com";
 export const EMAIL_MAILTO = "mailto:info@alphaluxclean.com";
 export const GBP_URL = "https://share.google/UG6ei8NirJNiDuHDi";

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin, Clock, Quote } from "lucide-react";
 import GHLForm from "@/components/GHLForm";
 import FAQAccordion from "@/components/FAQAccordion";
-import { PHONE_DISPLAY, PHONE_TEL, BASE_URL, SERVICES } from "@/lib/constants";
+import { TX_PHONE_DISPLAY, TX_PHONE_TEL, BASE_URL, SERVICES } from "@/lib/constants";
 import { TX_CITY_DATA } from "@/lib/locationData";
 
 export async function generateStaticParams() {
@@ -207,8 +207,8 @@ export default async function TXCityPage({ params }: { params: Promise<{ city: s
                 AlphaLux Cleaning serves {data.name}, TX with eco-friendly, non-toxic house cleaning. Get your free quote — response within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <a href={PHONE_TEL} className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#2C4267] transition-colors text-sm">
-                  <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
+                <a href={TX_PHONE_TEL} className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#2C4267] transition-colors text-sm">
+                  <Phone className="w-4 h-4" /> Call {TX_PHONE_DISPLAY}
                 </a>
               </div>
               <div className="flex flex-col gap-2 text-sm text-gray-400">

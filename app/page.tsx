@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import GHLForm from "@/components/GHLForm";
 import FAQAccordion from "@/components/FAQAccordion";
-import { TX_CITIES, CA_CITIES, PHONE_DISPLAY, PHONE_TEL, EMAIL_MAILTO, EMAIL, GBP_URL, BASE_URL } from "@/lib/constants";
+import { TX_CITIES, CA_CITIES, PHONE_DISPLAY, PHONE_TEL, CA_PHONE_DISPLAY, CA_PHONE_TEL, TX_PHONE_DISPLAY, TX_PHONE_TEL, EMAIL_MAILTO, EMAIL, GBP_URL, BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
@@ -191,11 +191,18 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href={PHONE_TEL}
+                  href={CA_PHONE_TEL}
                   className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  Call {PHONE_DISPLAY}
+                  Cali {CA_PHONE_DISPLAY}
+                </a>
+                <a
+                  href={TX_PHONE_TEL}
+                  className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  Texas {TX_PHONE_DISPLAY}
                 </a>
               </div>
 
@@ -422,9 +429,13 @@ export default function HomePage() {
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-8">
-            Don&apos;t see your city?{" "}
-            <a href={PHONE_TEL} className="text-[#253858] hover:underline font-medium">
-              Call {PHONE_DISPLAY}
+            Don&apos;t see your city? Call{" "}
+            <a href={CA_PHONE_TEL} className="text-[#253858] hover:underline font-medium">
+              CA {CA_PHONE_DISPLAY}
+            </a>{" "}
+            or{" "}
+            <a href={TX_PHONE_TEL} className="text-[#253858] hover:underline font-medium">
+              TX {TX_PHONE_DISPLAY}
             </a>{" "}
             — we may still serve you.
           </p>
@@ -581,11 +592,18 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href={PHONE_TEL}
+              href={CA_PHONE_TEL}
               className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              Call {PHONE_DISPLAY}
+              Cali {CA_PHONE_DISPLAY}
+            </a>
+            <a
+              href={TX_PHONE_TEL}
+              className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              Texas {TX_PHONE_DISPLAY}
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-5 mt-8 text-xs text-gray-500">
