@@ -79,7 +79,8 @@ export default function Navbar() {
                 Services
                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2 z-50">
+              <div className="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 z-50">
+              <div className="bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2">
                 {SERVICES.map((s) => (
                   <Link key={s.slug} href={`/services/${s.slug}`}
                     className="block px-4 py-2.5 text-sm text-gray-300 hover:text-[#253858] hover:bg-[#1A1A1A] transition-colors">
@@ -91,6 +92,7 @@ export default function Navbar() {
                     All Services →
                   </Link>
                 </div>
+              </div>
               </div>
             </div>
 
@@ -108,7 +110,8 @@ export default function Navbar() {
 
               {/* First-level: Texas / California */}
               {locHover && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2 z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-52 z-50">
+                <div className="bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2">
 
                   {/* Texas row */}
                   <div
@@ -121,13 +124,15 @@ export default function Navbar() {
                       <ChevronRight className="w-4 h-4 text-[#253858]" />
                     </div>
                     {txHover && (
-                      <div className="absolute top-0 left-full ml-1 w-48 bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2 z-50">
+                      <div className="absolute top-0 left-full pl-1 w-48 z-50">
+                      <div className="bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2">
                         {TX_CITIES.map((c) => (
                           <Link key={c.slug} href={`/locations/tx/${c.slug}`}
                             className="block px-4 py-2.5 text-sm text-gray-300 hover:text-[#253858] hover:bg-[#1A1A1A] transition-colors">
                             {c.name}, TX
                           </Link>
                         ))}
+                      </div>
                       </div>
                     )}
                   </div>
@@ -143,13 +148,15 @@ export default function Navbar() {
                       <ChevronRight className="w-4 h-4 text-[#253858]" />
                     </div>
                     {caHover && (
-                      <div className="absolute top-0 left-full ml-1 w-52 bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2 z-50">
+                      <div className="absolute top-0 left-full pl-1 w-52 z-50">
+                      <div className="bg-[#0A0A0A] border border-[#253858]/20 rounded-xl shadow-2xl py-2">
                         {CA_CITIES.map((c) => (
                           <Link key={c.slug} href={`/locations/ca/${c.slug}`}
                             className="block px-4 py-2.5 text-sm text-gray-300 hover:text-[#253858] hover:bg-[#1A1A1A] transition-colors">
                             {c.name}, CA
                           </Link>
                         ))}
+                      </div>
                       </div>
                     )}
                   </div>
@@ -159,6 +166,7 @@ export default function Navbar() {
                       All Locations →
                     </Link>
                   </div>
+                </div>
                 </div>
               )}
             </div>
