@@ -27,9 +27,10 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
             />
           </button>
           {open === i && (
-            <div className="px-6 pb-5 text-gray-600 leading-relaxed text-sm">
-              {faq.a}
-            </div>
+            <div
+              className="px-6 pb-5 text-gray-600 leading-relaxed text-sm faq-answer"
+              dangerouslySetInnerHTML={{ __html: faq.a }}
+            />
           )}
         </div>
       ))}
