@@ -381,50 +381,55 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="space-y-10 max-w-5xl mx-auto">
+            {/* Texas */}
             <div>
               <h3
-                className="text-[#0A0A0A] font-bold text-lg mb-4 flex items-center gap-2"
+                className="text-[#0A0A0A] font-bold text-lg mb-5 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                <span className="w-6 h-6 rounded-full bg-[#253858] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">TX</span>
+                <span className="w-7 h-7 rounded-full bg-[#253858] text-white text-xs font-bold flex items-center justify-center shrink-0">TX</span>
                 Texas
               </h3>
-              <ul className="space-y-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {TX_CITIES.map((c) => (
-                  <li key={c.slug}>
-                    <Link
-                      href={`/locations/tx/${c.slug}`}
-                      className="flex items-center gap-2 text-gray-600 hover:text-[#253858] transition-colors font-medium"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 text-[#253858]" />
-                      House Cleaning in {c.name}
-                    </Link>
-                  </li>
+                  <Link
+                    key={c.slug}
+                    href={`/locations/tx/${c.slug}`}
+                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-hover hover:border-[#253858]/40"
+                  >
+                    <span className="text-[#0A0A0A] font-semibold text-sm leading-tight">{c.name}</span>
+                    <span className="text-gray-400 text-xs flex items-center gap-1 group-hover:text-[#253858] transition-colors">
+                      House Cleaning <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
+
+            {/* California */}
             <div>
               <h3
-                className="text-[#0A0A0A] font-bold text-lg mb-4 flex items-center gap-2"
+                className="text-[#0A0A0A] font-bold text-lg mb-5 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                <span className="w-6 h-6 rounded-full bg-[#253858] text-[#0A0A0A] text-xs font-bold flex items-center justify-center">CA</span>
+                <span className="w-7 h-7 rounded-full bg-[#253858] text-white text-xs font-bold flex items-center justify-center shrink-0">CA</span>
                 California
               </h3>
-              <ul className="space-y-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {CA_CITIES.map((c) => (
-                  <li key={c.slug}>
-                    <Link
-                      href={`/locations/ca/${c.slug}`}
-                      className="flex items-center gap-2 text-gray-600 hover:text-[#253858] transition-colors font-medium"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 text-[#253858]" />
-                      House Cleaning in {c.name}
-                    </Link>
-                  </li>
+                  <Link
+                    key={c.slug}
+                    href={`/locations/ca/${c.slug}`}
+                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-hover hover:border-[#253858]/40"
+                  >
+                    <span className="text-[#0A0A0A] font-semibold text-sm leading-tight">{c.name}</span>
+                    <span className="text-gray-400 text-xs flex items-center gap-1 group-hover:text-[#253858] transition-colors">
+                      House Cleaning <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
 

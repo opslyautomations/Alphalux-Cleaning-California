@@ -183,9 +183,9 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               {PHONE_DISPLAY}
             </a>
-            <Link href="/contact" className="bg-[#253858] text-[#0A0A0A] text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#2C4267] transition-colors">
-              Get a Free Quote
-            </Link>
+            <a href="https://book.alphaluxclean.com/book/zip" className="bg-[#253858] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#2C4267] transition-colors">
+              Book Now
+            </a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -269,10 +269,10 @@ export default function Navbar() {
               <a href={PHONE_TEL} className="flex items-center justify-center gap-2 w-full py-3.5 border border-[#253858] text-[#253858] rounded-lg font-medium hover:bg-[#253858]/10 transition-colors">
                 <Phone className="w-4 h-4" /> Call {PHONE_DISPLAY}
               </a>
-              <Link href="/contact" onClick={closeMobile}
-                className="flex items-center justify-center w-full py-3.5 bg-[#253858] text-[#0A0A0A] rounded-lg font-semibold hover:bg-[#2C4267] transition-colors">
-                Get a Free Quote
-              </Link>
+              <a href="https://book.alphaluxclean.com/book/zip"
+                className="flex items-center justify-center w-full py-3.5 bg-[#253858] text-white rounded-lg font-semibold hover:bg-[#2C4267] transition-colors">
+                Book Now
+              </a>
             </div>
           </div>
         </div>
