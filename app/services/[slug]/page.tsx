@@ -1,42 +1,30 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import {
-  CheckCircle,
-  ArrowRight,
-  Phone,
-  Home,
-  Layers,
-  LogOut,
-  RefreshCw,
-  Key,
-  Sparkles,
-  Building2,
-  Hammer,
-} from "lucide-react";
-import GHLForm from "@/components/GHLForm";
-import FAQAccordion from "@/components/FAQAccordion";
-import {
-  CA_PHONE_DISPLAY,
-  CA_PHONE_TEL,
-  TX_PHONE_DISPLAY,
-  TX_PHONE_TEL,
-  BASE_URL,
-  SERVICES,
-  ALL_CITIES,
-} from "@/lib/constants";
+import { BASE_URL, SERVICES, ALL_CITIES } from "@/lib/constants";
+import type { ServiceEntry } from "@/lib/serviceTypes";
 
-type ServiceSection = { h2: string; html: string };
-type FAQ = { q: string; a: string };
-type ServiceEntry = {
-  name: string;
-  h1: string;
-  metaTitle: string;
-  metaDescription: string;
-  serviceType: string;
-  lead: string;
-  sections: ServiceSection[];
-  faqs: FAQ[];
+// Per-page layout components
+import StandardCleaningLayout from "@/components/service/layouts/StandardCleaning";
+import DeepCleaningLayout from "@/components/service/layouts/DeepCleaning";
+import MoveOutCleaningLayout from "@/components/service/layouts/MoveOutCleaning";
+import RecurringCleaningLayout from "@/components/service/layouts/RecurringCleaning";
+import AirbnbCleaningLayout from "@/components/service/layouts/AirbnbCleaning";
+import OneTimeCleaningLayout from "@/components/service/layouts/OneTimeCleaning";
+import VacationRentalLayout from "@/components/service/layouts/VacationRental";
+import PostConstructionLayout from "@/components/service/layouts/PostConstruction";
+
+// Layout dispatch map
+type LayoutComponent = React.ComponentType<{ data: ServiceEntry; slug: string }>;
+
+const LAYOUTS: Record<string, LayoutComponent> = {
+  "standard-cleaning": StandardCleaningLayout,
+  "deep-cleaning": DeepCleaningLayout,
+  "move-out-cleaning": MoveOutCleaningLayout,
+  "recurring-cleaning": RecurringCleaningLayout,
+  "airbnb-cleaning": AirbnbCleaningLayout,
+  "one-time-cleaning": OneTimeCleaningLayout,
+  "vacation-rental-cleaning": VacationRentalLayout,
+  "post-construction-cleaning": PostConstructionLayout,
 };
 
 function stripHtml(s: string): string {
@@ -698,28 +686,6 @@ const SERVICE_DATA: Record<string, ServiceEntry> = {
   },
 };
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  "standard-cleaning": Home,
-  "deep-cleaning": Layers,
-  "move-out-cleaning": LogOut,
-  "recurring-cleaning": RefreshCw,
-  "airbnb-cleaning": Key,
-  "one-time-cleaning": Sparkles,
-  "vacation-rental-cleaning": Building2,
-  "post-construction-cleaning": Hammer,
-};
-
-const SERVICES_GRID = [
-  { name: "Standard Cleaning", slug: "standard-cleaning", desc: "Regular upkeep for a spotless home", icon: Home },
-  { name: "Deep Cleaning", slug: "deep-cleaning", desc: "Top-to-bottom detail for a full reset", icon: Layers },
-  { name: "Move Out Cleaning", slug: "move-out-cleaning", desc: "Landlord-approved deposit-protection cleans", icon: LogOut },
-  { name: "Recurring Cleaning", slug: "recurring-cleaning", desc: "Weekly/bi-weekly/monthly with discounts", icon: RefreshCw },
-  { name: "Airbnb Cleaning", slug: "airbnb-cleaning", desc: "Fast 5-star guest-ready turnovers", icon: Key },
-  { name: "One-Time Cleaning", slug: "one-time-cleaning", desc: "One clean, no commitment, all the shine", icon: Sparkles },
-  { name: "Vacation Rental Cleaning", slug: "vacation-rental-cleaning", desc: "Reliable between-guest cleans", icon: Building2 },
-  { name: "Post Construction Cleaning", slug: "post-construction-cleaning", desc: "Dust, debris, and detail after renovation", icon: Hammer },
-];
-
 export async function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
@@ -780,8 +746,6 @@ export default async function ServicePage({
   const data = SERVICE_DATA[slug];
   if (!data) notFound();
 
-  const Icon = ICON_MAP[slug] || Home;
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -818,169 +782,24 @@ export default async function ServicePage({
     ],
   };
 
+  const Layout = LAYOUTS[slug];
+  if (!Layout) notFound();
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
-      {/* Hero */}
-      <section className="bg-[#0A0A0A] pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
-            <Link href="/" className="hover:text-[#253858] transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-[#253858] transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-[#253858]">{data.name}</span>
-          </nav>
-          <div className="flex items-start gap-5">
-            <div className="w-16 h-16 rounded-full bg-[#253858]/15 flex items-center justify-center shrink-0">
-              <Icon className="w-8 h-8 text-[#253858]" />
-            </div>
-            <div>
-              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-2">AlphaLux Cleaning</p>
-              <h1
-                className="text-white font-bold leading-tight"
-                style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
-              >
-                {data.h1}
-              </h1>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Lead */}
-      <section className="bg-white py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-600 text-lg leading-relaxed">{data.lead}</p>
-        </div>
-      </section>
-
-      {/* Content Sections */}
-      {data.sections.map((section, i) => (
-        <section key={i} className={`py-14 ${i % 2 === 0 ? "bg-[#F8F7F4]" : "bg-white"}`}>
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2
-              className="text-[#0A0A0A] font-bold mb-5"
-              style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)" }}
-            >
-              {section.h2}
-            </h2>
-            <div className="service-content" dangerouslySetInnerHTML={{ __html: section.html }} />
-          </div>
-        </section>
-      ))}
-
-      {/* FAQ */}
-      <section className="bg-[#F8F7F4] py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-[#0A0A0A] font-bold mb-8"
-            style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FAQAccordion faqs={data.faqs} />
-        </div>
-      </section>
-
-      {/* Our Services Grid */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-[#0A0A0A] font-bold mb-8"
-            style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
-          >
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES_GRID.map(({ name, slug: sSlug, desc, icon: SIcon }) => (
-              <Link
-                key={sSlug}
-                href={`/services/${sSlug}`}
-                className={`group flex flex-col gap-3 bg-[#F8F7F4] border rounded-xl p-5 card-hover transition-colors ${
-                  sSlug === slug
-                    ? "border-[#253858]/40 bg-[#253858]/5"
-                    : "border-[#253858]/10 hover:border-[#253858]/30"
-                }`}
-              >
-                <div className="w-10 h-10 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0 group-hover:bg-[#253858]/20 transition-colors">
-                  <SIcon className="w-5 h-5 text-[#253858]" />
-                </div>
-                <div>
-                  <p
-                    className="text-[#0A0A0A] font-bold text-sm mb-1 group-hover:text-[#253858] transition-colors"
-                    style={{ fontFamily: "var(--font-playfair)" }}
-                  >
-                    {name}
-                  </p>
-                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
-                </div>
-                <span className="text-[#253858] text-xs font-medium inline-flex items-center gap-1 mt-auto">
-                  {sSlug === slug ? "Current page" : <>View <ArrowRight className="w-3 h-3" /></>}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA + Form */}
-      <section className="bg-[#0A0A0A] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get Started</p>
-              <h2
-                className="text-white font-bold leading-tight mb-4"
-                style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}
-              >
-                Book Your {data.name} Today
-              </h2>
-              <p className="text-gray-400 mb-6">
-                Available across 17 cities in Texas and California. Same-week scheduling often available.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={TX_PHONE_TEL}
-                  className="inline-flex items-center justify-center gap-2 bg-[#253858] text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-[#2C4267] transition-colors text-sm"
-                >
-                  <Phone className="w-4 h-4" /> Call Texas {TX_PHONE_DISPLAY}
-                </a>
-                <a
-                  href={CA_PHONE_TEL}
-                  className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-6 py-3.5 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
-                >
-                  <Phone className="w-4 h-4" /> Call Cali {CA_PHONE_DISPLAY}
-                </a>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-4 text-xs text-gray-500">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />Licensed &amp; Insured
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />100% Non-Toxic
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />5-Star Rated
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />17 Cities
-                </span>
-              </div>
-            </div>
-            <div className="bg-[#1A1A1A] border border-[#253858]/20 rounded-2xl p-6">
-              <h3 className="text-white font-bold mb-1" style={{ fontFamily: "var(--font-playfair)" }}>
-                Get Your Free Quote
-              </h3>
-              <p className="text-gray-500 text-sm mb-5">Response within 24 hours.</p>
-              <GHLForm />
-            </div>
-          </div>
-        </div>
-      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Layout data={data} slug={slug} />
     </>
   );
 }

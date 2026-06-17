@@ -10,6 +10,15 @@
   --color-brand-black: #0A0A0A;
   --color-charcoal: #1A1A1A;
   --color-off-white: #F8F7F4;
+  /* Design system tokens */
+  --color-navy-900: #1A2740;
+  --color-navy-800: #253858;
+  --color-navy-700: #34507A;
+  --color-ink: #0F1626;
+  --color-slate: #475873;
+  --color-paper: #FFFFFF;
+  --color-mist: #F4F6FA;
+  --color-line: #E2E8F2;
   --font-playfair: "Playfair Display", Georgia, serif;
   --font-inter: "Inter", system-ui, sans-serif;
 }
@@ -150,4 +159,182 @@ h1, h2, h3, h4, h5 {
 ::-webkit-scrollbar-thumb {
   background: #253858;
   border-radius: 3px;
+}
+
+/* ============================================================
+   SERVICE PAGE DESIGN SYSTEM
+   ============================================================ */
+
+/* Card variants */
+.card {
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F2;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(26,39,64,.06);
+}
+.card--mist {
+  border-radius: 16px;
+  background: #F4F6FA;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(26,39,64,.06);
+}
+.card--dark {
+  border-radius: 16px;
+  background: #253858;
+  color: #FFFFFF;
+  padding: 28px 32px;
+  box-shadow: 0 12px 32px rgba(26,39,64,.18);
+}
+.card--feature {
+  border-radius: 16px;
+  background: #253858;
+  color: #FFFFFF;
+  padding: 36px 40px;
+  box-shadow: 0 12px 32px rgba(26,39,64,.18);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #253858;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-family: var(--font-inter);
+}
+.btn-primary:hover {
+  background: #34507A;
+  transform: translateY(-1px);
+}
+.btn-primary:focus-visible {
+  outline: 3px solid #34507A;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.8);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #253858;
+  font-weight: 600;
+  border-radius: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1.5px solid #253858;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-family: var(--font-inter);
+}
+.btn-secondary:hover {
+  background: rgba(37,56,88,0.08);
+}
+.btn-secondary:focus-visible {
+  outline: 3px solid #34507A;
+  outline-offset: 2px;
+}
+
+.btn-secondary--dark {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.7);
+}
+.btn-secondary--dark:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #475873;
+  font-family: var(--font-inter);
+}
+.eyebrow--dark {
+  color: rgba(255,255,255,0.65);
+}
+
+/* Display numeral */
+.display-numeral {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  font-family: var(--font-playfair);
+  line-height: 1;
+}
+
+/* Chip/tag */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #F4F6FA;
+  border: 1px solid #E2E8F2;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475873;
+  white-space: nowrap;
+}
+
+/* Dark surface content overrides */
+.service-content--dark p {
+  color: rgba(255,255,255,0.8);
+}
+.service-content--dark li {
+  color: rgba(255,255,255,0.85);
+}
+.service-content--dark li::before {
+  color: rgba(255,255,255,0.6);
+}
+.service-content--dark strong {
+  color: #FFFFFF;
+}
+.service-content--dark a {
+  color: rgba(255,255,255,0.9);
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.service-content--dark a:hover {
+  color: #FFFFFF;
+}
+
+/* Section band vertical rhythm */
+.section-band {
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+
+/* Reduced motion — suppress all animation/transition */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .card-hover:hover {
+    transform: none;
+    transition: none;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+    transition: none;
+  }
+  .dropdown-menu {
+    transition: none;
+  }
 }
