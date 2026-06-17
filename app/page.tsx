@@ -161,7 +161,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left */}
             <div>
-              <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+              <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
                 Eco-Conscious House Cleaning
               </p>
               <h1
@@ -173,7 +173,7 @@ export default function HomePage() {
               >
                 Luxury Clean.
                 <br />
-                <span className="text-[#253858]">Non-Toxic.</span>
+                <span className="text-[#7EB3D6]">Non-Toxic.</span>
                 <br />
                 Zero Compromise.
               </h1>
@@ -185,21 +185,21 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-7 py-4 rounded-lg hover:bg-[#2C4267] transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-[#253858] text-white font-semibold px-7 py-4 rounded-lg hover:bg-[#2C4267] transition-colors text-sm"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href={CA_PHONE_TEL}
-                  className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-7 py-4 rounded-lg hover:bg-white/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   Call Cali
                 </a>
                 <a
                   href={TX_PHONE_TEL}
-                  className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-7 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-7 py-4 rounded-lg hover:bg-white/10 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   Call Texas
@@ -207,24 +207,24 @@ export default function HomePage() {
               </div>
 
               {/* Trust row */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
                 <span className="flex items-center gap-1.5">
-                  <span className="text-[#253858]">★★★★★</span>
+                  <span className="text-[#7EB3D6]">★★★★★</span>
                   5-Star Rated
                 </span>
-                <span className="text-[#253858]/40">·</span>
+                <span className="text-white/20">·</span>
                 <span className="flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5 text-[#253858]" />
+                  <Shield className="w-3.5 h-3.5 text-[#7EB3D6]" />
                   Licensed &amp; Insured
                 </span>
-                <span className="text-[#253858]/40">·</span>
+                <span className="text-white/20">·</span>
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#253858]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#7EB3D6]" />
                   17 Cities Served
                 </span>
-                <span className="text-[#253858]/40">·</span>
+                <span className="text-white/20">·</span>
                 <span className="flex items-center gap-1.5">
-                  <Leaf className="w-3.5 h-3.5 text-[#253858]" />
+                  <Leaf className="w-3.5 h-3.5 text-[#7EB3D6]" />
                   Eco-Friendly Certified
                 </span>
               </div>
@@ -257,7 +257,7 @@ export default function HomePage() {
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-[#253858]" />
+                  <Icon className="w-5 h-5 text-[#7EB3D6]" />
                 </div>
                 <span className="text-gray-300 text-sm font-medium">{text}</span>
               </div>
@@ -320,7 +320,7 @@ export default function HomePage() {
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-14">
-            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Our Difference
             </p>
             <h2
@@ -351,7 +351,7 @@ export default function HomePage() {
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-[#253858]/15 flex items-center justify-center mx-auto mb-5">
-                  <Icon className="w-8 h-8 text-[#253858]" />
+                  <Icon className="w-8 h-8 text-[#7EB3D6]" />
                 </div>
                 <h3
                   className="text-white font-bold text-lg mb-3"
@@ -490,7 +490,7 @@ export default function HomePage() {
       <section className="bg-[#0A0A0A] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Client Reviews
             </p>
             <h2
@@ -516,7 +516,7 @@ export default function HomePage() {
                     <p className="text-white font-semibold text-sm">{r.name}</p>
                     <p className="text-gray-500 text-xs">{r.city} · {r.service}</p>
                   </div>
-                  <span className="text-[#253858] text-sm">★★★★★</span>
+                  <span className="text-[#7EB3D6] text-sm">★★★★★</span>
                 </div>
               </div>
             ))}
@@ -525,7 +525,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-[#253858] font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-[#7EB3D6] font-medium hover:gap-3 transition-all"
             >
               Read All Reviews <ArrowRight className="w-4 h-4" />
             </Link>
@@ -571,7 +571,7 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-4 w-8 h-8 border-b-2 border-l-2 border-[#253858]/40 rounded-bl-lg" />
           <div className="absolute bottom-0 right-4 w-8 h-8 border-b-2 border-r-2 border-[#253858]/40 rounded-br-lg" />
 
-          <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             Get Started Today
           </p>
           <h2
@@ -586,21 +586,21 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#253858] text-[#0A0A0A] font-semibold px-8 py-4 rounded-lg hover:bg-[#2C4267] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#253858] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#2C4267] transition-colors"
             >
               Get a Free Quote
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href={CA_PHONE_TEL}
-              className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
               Call Cali
             </a>
             <a
               href={TX_PHONE_TEL}
-              className="inline-flex items-center justify-center gap-2 border border-[#253858] text-[#253858] font-semibold px-8 py-4 rounded-lg hover:bg-[#253858]/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
               Call Texas
@@ -608,19 +608,19 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap justify-center gap-5 mt-8 text-xs text-gray-500">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#7EB3D6]" />
               Licensed &amp; Insured
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#7EB3D6]" />
               100% Non-Toxic
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#7EB3D6]" />
               Same-Week Availability
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-[#253858]" />
+              <CheckCircle className="w-3.5 h-3.5 text-[#7EB3D6]" />
               17 Cities Served
             </span>
           </div>
