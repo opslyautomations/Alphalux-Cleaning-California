@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blogData";
 
-const BASE = "https://www.alphaluxclean.com";
+const BASE = "https://alphaluxclean.com";
 const NOW = new Date("2026-05-04");
 
 const SERVICES = [

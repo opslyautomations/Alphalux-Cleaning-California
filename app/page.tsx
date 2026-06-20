@@ -24,15 +24,15 @@ import { Reveal } from "@/components/Reveal";
 import { TX_CITIES, CA_CITIES, PHONE_DISPLAY, PHONE_TEL, CA_PHONE_DISPLAY, CA_PHONE_TEL, TX_PHONE_DISPLAY, TX_PHONE_TEL, EMAIL_MAILTO, EMAIL, GBP_URL, BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
+  title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
   description:
-    "Professional eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. Serving Dallas, Austin, LA, Beverly Hills & 13 more cities. Free quote.",
+    "Eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. Serving 17 cities. Free quote.",
   alternates: { canonical: `${BASE_URL}/` },
   openGraph: {
     type: "website",
-    title: "AlphaLux Cleaning | Eco-Friendly House Cleaning in Texas & California",
+    title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     description:
-      "Professional eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. 17 cities. Free quote.",
+      "Eco-friendly house cleaning in Texas & California. Non-toxic products, licensed & insured. Serving 17 cities. Free quote.",
     url: `${BASE_URL}/`,
     siteName: "AlphaLux Cleaning",
     locale: "en_US",
@@ -105,6 +105,16 @@ const FAQS = [
   },
 ];
 
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 const REVIEWS = [
   {
     name: "Sarah M.",
@@ -138,6 +148,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
       />
 
       {/* ── HERO ── */}

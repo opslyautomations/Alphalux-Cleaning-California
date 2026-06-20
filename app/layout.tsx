@@ -22,26 +22,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.alphaluxclean.com"),
+  metadataBase: new URL("https://alphaluxclean.com"),
   title: {
     default: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     template: "%s | AlphaLux Cleaning",
   },
   description:
     "Eco-friendly, non-toxic house cleaning in Texas & California. Licensed, insured, 5-star rated. Free quote in 60 seconds.",
-  alternates: { canonical: "https://www.alphaluxclean.com" },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     description:
       "Eco-friendly, non-toxic house cleaning in TX & CA. Licensed & insured. Free quote in 60 seconds.",
-    url: "https://www.alphaluxclean.com",
+    url: "https://alphaluxclean.com",
     siteName: "AlphaLux Cleaning",
     locale: "en_US",
     images: [
       {
-        url: "https://www.alphaluxclean.com/og/homepage.png",
-        secureUrl: "https://www.alphaluxclean.com/og/homepage.png",
+        url: "https://alphaluxclean.com/og/homepage.png",
+        secureUrl: "https://alphaluxclean.com/og/homepage.png",
         width: 1200,
         height: 630,
         alt: "AlphaLux Cleaning — Non-Toxic House Cleaning in Texas & California",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "AlphaLux Cleaning | Non-Toxic House Cleaning TX & CA",
     description:
       "Eco-friendly, non-toxic house cleaning in TX & CA. Licensed & insured. Free quote in 60 seconds.",
-    images: ["https://www.alphaluxclean.com/og/homepage.png"],
+    images: ["https://alphaluxclean.com/og/homepage.png"],
   },
   robots: {
     index: true,
@@ -72,10 +72,10 @@ const schemaOrg = {
   name: "AlphaLux Cleaning",
   description:
     "Eco-conscious, non-toxic house cleaning services across Texas and California.",
-  url: "https://www.alphaluxclean.com",
+  url: "https://alphaluxclean.com",
   telephone: "+19725590223",
   email: "info@alphaluxclean.com",
-  image: "https://www.alphaluxclean.com/alphalux-logo.png",
+  image: "https://alphaluxclean.com/alphalux-logo.png",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

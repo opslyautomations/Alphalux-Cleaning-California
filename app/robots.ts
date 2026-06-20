@@ -27,6 +27,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/", "/private/"],
       },
     ],
-    sitemap: "https://www.alphaluxclean.com/sitemap.xml",
+    sitemap: "https://alphaluxclean.com/sitemap.xml",
   };
 }

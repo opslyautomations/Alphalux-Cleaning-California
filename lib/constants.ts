@@ -8,7 +8,7 @@ export const TX_PHONE_TEL = "tel:+19725590223";
 export const EMAIL = "info@alphaluxclean.com";
 export const EMAIL_MAILTO = "mailto:info@alphaluxclean.com";
 export const GBP_URL = "https://share.google/UG6ei8NirJNiDuHDi";
-export const BASE_URL = "https://www.alphaluxclean.com";
+export const BASE_URL = "https://alphaluxclean.com";
 
 export const SERVICES = [
   { name: "Standard Cleaning", slug: "standard-cleaning" },
