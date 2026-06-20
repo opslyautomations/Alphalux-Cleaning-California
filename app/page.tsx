@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import GHLForm from "@/components/GHLForm";
 import FAQAccordion from "@/components/FAQAccordion";
+import { Reveal } from "@/components/Reveal";
 import { TX_CITIES, CA_CITIES, PHONE_DISPLAY, PHONE_TEL, CA_PHONE_DISPLAY, CA_PHONE_TEL, TX_PHONE_DISPLAY, TX_PHONE_TEL, EMAIL_MAILTO, EMAIL, GBP_URL, BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -254,13 +255,13 @@ export default function HomePage() {
               { icon: Leaf, text: "100% Non-Toxic Products" },
               { icon: Star, text: "5-Star Rated Service" },
               { icon: MapPin, text: "17 Cities Across TX & CA" },
-            ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-3">
+            ].map(({ icon: Icon, text }, i) => (
+              <Reveal key={text} as="div" variant="fade" delay={i * 80} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#253858]/10 flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5 text-[#7EB3D6]" />
                 </div>
                 <span className="text-gray-300 text-sm font-medium">{text}</span>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -269,7 +270,7 @@ export default function HomePage() {
       {/* ── SERVICES GRID ── */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               What We Offer
             </p>
@@ -282,29 +283,30 @@ export default function HomePage() {
             <p className="text-gray-500 max-w-xl mx-auto">
               Non-toxic, eco-friendly cleaning for every situation — from weekly upkeep to post-renovation detail work.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES_DATA.map(({ name, slug, desc, icon: Icon }) => (
-              <Link
-                key={slug}
-                href={`/services/${slug}`}
-                className="group bg-white border border-gray-100 rounded-xl p-6 card-hover hover:border-[#253858]/40"
-              >
-                <div className="w-12 h-12 rounded-full bg-[#253858]/10 flex items-center justify-center mb-4 group-hover:bg-[#253858]/20 transition-colors">
-                  <Icon className="w-6 h-6 text-[#253858]" />
-                </div>
-                <h3
-                  className="font-bold text-[#0A0A0A] mb-2 text-base"
-                  style={{ fontFamily: "var(--font-playfair)" }}
+            {SERVICES_DATA.map(({ name, slug, desc, icon: Icon }, i) => (
+              <Reveal key={slug} as="div" variant="up" delay={i * 80} className="flex flex-col">
+                <Link
+                  href={`/services/${slug}`}
+                  className="group flex flex-col flex-1 bg-white border border-gray-100 rounded-xl p-6 card-lift card-glow hover:border-[#253858]/40"
                 >
-                  {name}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <span className="text-[#253858] text-sm font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
+                  <div className="w-12 h-12 rounded-full bg-[#253858]/10 flex items-center justify-center mb-4 group-hover:bg-[#253858]/20 transition-colors">
+                    <Icon className="w-6 h-6 text-[#253858]" />
+                  </div>
+                  <h3
+                    className="font-bold text-[#0A0A0A] mb-2 text-base"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {name}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
+                  <span className="text-[#253858] text-sm font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all mt-auto">
+                    Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -319,7 +321,7 @@ export default function HomePage() {
           }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Our Difference
             </p>
@@ -329,7 +331,7 @@ export default function HomePage() {
             >
               Why Homeowners Choose AlphaLux
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -348,8 +350,8 @@ export default function HomePage() {
                 title: "Reliable & Insured Teams",
                 desc: "Background-checked, uniformed, fully insured professionals. Trust is earned — we earn it on every visit.",
               },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="text-center">
+            ].map(({ icon: Icon, title, desc }, i) => (
+              <Reveal key={title} as="div" variant="up" delay={i * 80} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-[#253858]/15 flex items-center justify-center mx-auto mb-5">
                   <Icon className="w-8 h-8 text-[#7EB3D6]" />
                 </div>
@@ -360,7 +362,7 @@ export default function HomePage() {
                   {title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed text-sm">{desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -369,7 +371,7 @@ export default function HomePage() {
       {/* ── SERVICE AREAS ── */}
       <section className="bg-[#F8F7F4] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Where We Work
             </p>
@@ -379,11 +381,11 @@ export default function HomePage() {
             >
               Serving Texas &amp; California
             </h2>
-          </div>
+          </Reveal>
 
           <div className="space-y-10 max-w-5xl mx-auto">
             {/* Texas */}
-            <div>
+            <Reveal>
               <h3
                 className="text-[#0A0A0A] font-bold text-lg mb-5 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
@@ -396,7 +398,7 @@ export default function HomePage() {
                   <Link
                     key={c.slug}
                     href={`/locations/tx/${c.slug}`}
-                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-hover hover:border-[#253858]/40"
+                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-lift hover:border-[#253858]/40"
                   >
                     <span className="text-[#0A0A0A] font-semibold text-sm leading-tight">{c.name}</span>
                     <span className="text-gray-400 text-xs flex items-center gap-1 group-hover:text-[#253858] transition-colors">
@@ -405,10 +407,10 @@ export default function HomePage() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
             {/* California */}
-            <div>
+            <Reveal delay={80}>
               <h3
                 className="text-[#0A0A0A] font-bold text-lg mb-5 flex items-center gap-2"
                 style={{ fontFamily: "var(--font-playfair)" }}
@@ -421,7 +423,7 @@ export default function HomePage() {
                   <Link
                     key={c.slug}
                     href={`/locations/ca/${c.slug}`}
-                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-hover hover:border-[#253858]/40"
+                    className="group flex flex-col gap-1 bg-white border border-gray-200 rounded-xl px-4 py-4 card-lift hover:border-[#253858]/40"
                   >
                     <span className="text-[#0A0A0A] font-semibold text-sm leading-tight">{c.name}</span>
                     <span className="text-gray-400 text-xs flex items-center gap-1 group-hover:text-[#253858] transition-colors">
@@ -430,7 +432,7 @@ export default function HomePage() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-8">
@@ -450,7 +452,7 @@ export default function HomePage() {
       {/* ── RECENT PROJECTS STRIP ── */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Case Studies
             </p>
@@ -460,13 +462,16 @@ export default function HomePage() {
             >
               Recent Work
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {RECENT_PROJECTS.map((p) => (
-              <div
+            {RECENT_PROJECTS.map((p, i) => (
+              <Reveal
                 key={p.type}
-                className="border border-[#253858]/20 rounded-xl p-6 card-hover"
+                as="div"
+                variant="up"
+                delay={i * 80}
+                className="border border-[#253858]/20 rounded-xl p-6 card-lift card-glow"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[#253858] text-xs font-semibold uppercase tracking-wider">
@@ -476,7 +481,7 @@ export default function HomePage() {
                 </div>
                 <p className="text-[#0A0A0A] font-semibold mb-1 text-sm">{p.city}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.outcome}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -494,7 +499,7 @@ export default function HomePage() {
       {/* ── REVIEWS ── */}
       <section className="bg-[#0A0A0A] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <p className="text-[#7EB3D6] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Client Reviews
             </p>
@@ -504,13 +509,16 @@ export default function HomePage() {
             >
               What Our Clients Say
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {REVIEWS.map((r) => (
-              <div
+            {REVIEWS.map((r, i) => (
+              <Reveal
                 key={r.name}
-                className="bg-[#1A1A1A] border border-[#253858]/15 rounded-xl p-7 card-hover"
+                as="div"
+                variant="up"
+                delay={i * 80}
+                className="bg-[#1A1A1A] border border-[#253858]/15 rounded-xl p-7 card-lift"
               >
                 <Quote className="w-8 h-8 text-[#253858]/30 mb-4" />
                 <p className="text-gray-300 leading-relaxed mb-6 text-sm">
@@ -523,7 +531,7 @@ export default function HomePage() {
                   </div>
                   <span className="text-[#7EB3D6] text-sm">★★★★★</span>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -541,7 +549,7 @@ export default function HomePage() {
       {/* ── FAQ ── */}
       <section className="bg-[#F8F7F4] py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <p className="text-[#253858] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Common Questions
             </p>
@@ -551,7 +559,7 @@ export default function HomePage() {
             >
               Frequently Asked Questions
             </h2>
-          </div>
+          </Reveal>
           <FAQAccordion faqs={FAQS} />
         </div>
       </section>
@@ -569,7 +577,7 @@ export default function HomePage() {
             background: "radial-gradient(ellipse 60% 70% at 50% 50%, rgba(201,169,97,0.12) 0%, transparent 70%)",
           }}
         />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <Reveal as="div" variant="up" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           {/* Gold corner accents */}
           <div className="absolute top-0 left-4 w-8 h-8 border-t-2 border-l-2 border-[#253858]/40 rounded-tl-lg" />
           <div className="absolute top-0 right-4 w-8 h-8 border-t-2 border-r-2 border-[#253858]/40 rounded-tr-lg" />
@@ -629,7 +637,7 @@ export default function HomePage() {
               17 Cities Served
             </span>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

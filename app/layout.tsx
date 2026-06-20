@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import "@/styles/motion.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
@@ -113,9 +114,10 @@ const schemaOrg = {
         "Thursday",
         "Friday",
         "Saturday",
+        "Sunday",
       ],
-      opens: "08:00",
-      closes: "18:00",
+      opens: "06:00",
+      closes: "21:00",
     },
   ],
 };

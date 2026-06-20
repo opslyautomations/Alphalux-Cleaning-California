@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Home, Layers, LogOut, RefreshCw, Key, Sparkles, Building2, Hammer } from "lucide-react";
 import type { ElementType } from "react";
+import { Reveal } from "@/components/Reveal";
 
 const SERVICES_GRID: { name: string; slug: string; desc: string; icon: ElementType }[] = [
   { name: "Standard Cleaning", slug: "standard-cleaning", desc: "Regular upkeep for a spotless home", icon: Home },
@@ -29,7 +30,7 @@ export function ServicesGrid({ currentSlug }: ServicesGridProps) {
           Our Services
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SERVICES_GRID.map(({ name, slug, desc, icon: Icon }) => {
+          {SERVICES_GRID.map(({ name, slug, desc, icon: Icon }, i) => {
             const isCurrent = slug === currentSlug;
             const inner = (
               <>
@@ -83,13 +84,14 @@ export function ServicesGrid({ currentSlug }: ServicesGridProps) {
               );
             }
             return (
-              <Link
-                key={slug}
-                href={`/services/${slug}`}
-                className="group flex flex-col gap-3 bg-[#F4F6FA] border border-[#E2E8F2] rounded-xl p-5 card-hover transition-colors hover:border-[#253858]/30"
-              >
-                {inner}
-              </Link>
+              <Reveal key={slug} as="div" variant="up" delay={i * 80} className="flex flex-col">
+                <Link
+                  href={`/services/${slug}`}
+                  className="group flex flex-col flex-1 gap-3 bg-[#F4F6FA] border border-[#E2E8F2] rounded-xl p-5 card-lift card-glow transition-colors hover:border-[#253858]/30"
+                >
+                  {inner}
+                </Link>
+              </Reveal>
             );
           })}
         </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin, Clock, Quote } from "lucide-react";
 import GHLForm from "@/components/GHLForm";
 import FAQAccordion from "@/components/FAQAccordion";
+import { Reveal } from "@/components/Reveal";
 import { CA_PHONE_DISPLAY, CA_PHONE_TEL, BASE_URL, SERVICES } from "@/lib/constants";
 import { CA_CITY_DATA } from "@/lib/locationData";
 
@@ -112,13 +113,13 @@ export default async function CACityPage({ params }: { params: Promise<{ city: s
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.reasons.map(({ title, desc }, i) => (
-              <div key={title} className="bg-white border border-[#253858]/10 rounded-xl p-6">
+              <Reveal key={title} as="div" variant="up" delay={i * 80} className="bg-white border border-[#253858]/10 rounded-xl p-6 card-lift card-glow">
                 <div className="w-10 h-10 rounded-full bg-[#253858] text-[#0A0A0A] font-bold text-lg flex items-center justify-center mb-4">
                   {i + 1}
                 </div>
                 <h3 className="text-[#0A0A0A] font-bold mb-2 text-sm" style={{ fontFamily: "var(--font-playfair)" }}>{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -131,13 +132,15 @@ export default async function CACityPage({ params }: { params: Promise<{ city: s
             Services Available in {data.name}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SERVICES.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-5 card-hover hover:border-[#253858]/30">
-                <h3 className="text-[#0A0A0A] font-bold text-sm mb-3 group-hover:text-[#253858] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
-                <span className="text-[#253858] text-xs font-medium inline-flex items-center gap-1">
-                  Learn More <ArrowRight className="w-3 h-3" />
-                </span>
-              </Link>
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.slug} as="div" variant="up" delay={i * 80} className="flex flex-col">
+                <Link href={`/services/${s.slug}`} className="group flex flex-col flex-1 bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-5 card-lift card-glow hover:border-[#253858]/30">
+                  <h3 className="text-[#0A0A0A] font-bold text-sm mb-3 group-hover:text-[#253858] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>{s.name}</h3>
+                  <span className="text-[#253858] text-xs font-medium inline-flex items-center gap-1 mt-auto">
+                    Learn More <ArrowRight className="w-3 h-3" />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -177,8 +180,8 @@ export default async function CACityPage({ params }: { params: Promise<{ city: s
             Reviews from {data.name}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {data.reviews.map((r) => (
-              <div key={r.name} className="bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-6">
+            {data.reviews.map((r, i) => (
+              <Reveal key={r.name} as="div" variant="up" delay={i * 80} className="bg-[#F8F7F4] border border-[#253858]/10 rounded-xl p-6 card-lift">
                 <Quote className="w-6 h-6 text-[#253858]/30 mb-3" />
                 <p className="text-gray-600 leading-relaxed mb-5 text-sm">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center justify-between">
@@ -188,7 +191,7 @@ export default async function CACityPage({ params }: { params: Promise<{ city: s
                   </div>
                   <span className="text-[#253858] text-sm">★★★★★</span>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

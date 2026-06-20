@@ -1,0 +1,89 @@
+/* Brand accent for card-glow gradient */
+:root { --accent: #7EB3D6; }
+
+/* ---------- Scroll reveals (IntersectionObserver-driven) ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal--up    { transform: translateY(24px); }
+.reveal--left  { transform: translateX(-24px); }
+.reveal--right { transform: translateX(24px); }
+.reveal--fade  { transform: none; }
+
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Parallax / scroll-linked (pure CSS, progressive) ---------- */
+/* Only runs where animation-timeline is supported; static everywhere else. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax-slow {
+      animation: parallaxDrift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+    @keyframes parallaxDrift {
+      from { transform: translateY(28px); }
+      to   { transform: translateY(-28px); }
+    }
+    /* Subtle scale-in for hero-adjacent imagery (NOT the LCP image itself) */
+    .scroll-scale {
+      animation: scrollScale linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+    @keyframes scrollScale {
+      from { transform: scale(0.96); opacity: 0.85; }
+      to   { transform: scale(1);     opacity: 1; }
+    }
+  }
+}
+
+/* ---------- Card interactions (compositor-only, CLS-safe) ---------- */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.22);
+}
+
+/* Image zoom inside a card — wrapper MUST have overflow:hidden + fixed aspect */
+.card-media { overflow: hidden; }
+.card-media img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.card-lift:hover .card-media img { transform: scale(1.06); }
+
+/* Gradient-border reveal on hover (uses opacity, no layout change) */
+.card-glow { position: relative; isolation: isolate; }
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent, #7EB3D6), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+.card-glow:hover::before { opacity: 1; }
+
+/* ---------- Global reduced-motion kill switch ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .parallax-slow, .scroll-scale { animation: none !important; transform: none !important; }
+  .card-lift, .card-media img { transition: none !important; }
+  .card-lift:hover { transform: none !important; }
+  .card-lift:hover .card-media img { transform: none !important; }
+}

@@ -100,8 +100,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Hours</p>
-                    <p className="text-[#0A0A0A] font-semibold">Mon–Sat 8:00 AM – 6:00 PM</p>
-                    <p className="text-gray-500 text-sm">Sunday by appointment</p>
+                    <p className="text-[#0A0A0A] font-semibold">Mon–Sun 6:00 AM – 9:00 PM</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
